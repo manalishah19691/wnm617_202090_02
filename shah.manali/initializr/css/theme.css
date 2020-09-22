@@ -1,1 +1,193 @@
-theme.css
+
+::before, ::after{
+        display: block;
+        width: 100px;
+        height: 100px;
+}
+
+
+:root{
+      font-family: 'Libre Baskerville', serif;
+      --color-pink: #fe53bb;
+      --color-green: #09fbd3;
+      --color-blue: #08f7fe;
+      --color-yellow: #f5d300;
+
+      --color-black: #000;
+      --color-white: #fff;
+      
+      }
+
+
+    .header-container {
+    border-bottom: 20px;
+    color:var(--color-white);
+    background: repeating-linear-gradient(
+        45deg,
+        #fe53bb,
+        #09fbd3 70px,
+        #08f7fe 70px,
+        #f5d300 140px);
+     height: 50vh;
+}
+
+.wrapper .clearfix{
+    position: relative;
+    padding: 1px;
+    border: 1px;
+
+}
+
+
+.title .header-contaner{
+       position: relative;
+       
+           padding: 1em;   
+
+}
+
+
+.title{
+    color:var(--color-black);
+    letter-spacing: 0.50em;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2em;  
+    padding: 1em;   
+    float: center;
+    background-color: var(--color-blue);
+    margin: 1px color:var(--colo-pink);
+    animation-name: titlemove;
+    animation-duration: 4s;
+}
+
+@keyframes titlemove{
+  0%   {color:var(--color-black);left:0px; top:0px;}
+  50%  {color:var(--color-white);left:200px; top:200px;}
+  100% {color:var(--color-black);left:0px; top:0px;}
+}
+
+
+body{
+     background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?cs=srgb&dl=pexels-henry-%26-co-1939485.jpg&fm=jpg");
+     background-size: 20%;  
+     background-image align-content: center;
+     margin: 0;
+     font-size: 100%;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li:second-child a{
+    background-color: var(--color-yellow);
+    color: var(--color-black)
+}
+
+nav li a {
+    background: var(--color-pink);
+    text-transform: uppercase;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+
+}    
+
+h1, h2, h3 {
+    padding: 8px;
+} 
+
+.main article {
+    width: 90%;
+    margin: 1 auto;
+}
+
+p{
+    box-sizing: border-box;
+    display: block;
+    padding: 50px
+}
+
+article h1{
+    background-color: var(--color-pink);
+    color:var(--color-yellow);
+    float: right;
+}
+
+article header p{
+        text-decoration: underline;
+        background-color: var(--color-green);
+}
+
+article h2 {
+  color: var(--color-blue);
+  border: 5px var(--color-blue);
+  width: 60%;
+}
+
+article h3 {
+    text-transform: uppercase;
+    text-indent: left;
+    color: var(--color-pink);
+}
+
+.main aside{
+    border: 10px solid var(--color-green);
+    background-color: var(--color-blue);
+    color: var(--color-purple);
+    clear: both;
+}
+
+.main aside h3{
+    text-align: center;
+}
+
+
+.footer-container footer{
+    border-radius: 100px;
+    color:var(--color-green);
+  background-color: var(--color-pink);
+    color: var(--color-white);
+
+}
+
+.footer-container{
+    text-align: center;
+    background-color: var(--color-green);
+    border: 0px;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+    .header-container{
+        box-sizing: 1rem;
+        margin 1em 0;
+    }
+
+
+
+    section:nth-child(2){
+       background color: var(--color-yellow);
+       color: var(--color-pink); 
+       border: 5px solid var(--color-blue);
+       width: 60%;
+       float: right;
+    }
+
+    section:nth-child(3){
+    float:right;
+    background color:var(--color-yellow);
+    color: var(--color-pink);
+    width: 60%;
+    float: left;
+    }
+

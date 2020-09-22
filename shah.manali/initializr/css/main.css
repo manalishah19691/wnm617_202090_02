@@ -55,11 +55,11 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-
+/*
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
-
+*/
 .wrapper {
     width: 90%;
     margin: 0 5%;
@@ -108,7 +108,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #f16529;
+    background: #e44d26;
 }
 
 nav a:hover,

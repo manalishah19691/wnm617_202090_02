@@ -1,0 +1,37 @@
+
+::before, ::after{
+        display: block;
+        width: 100px;
+        height: 100px;
+}
+
+:root{
+      font-family: 'Libre Baskerville', serif;
+      --color-pink: #fe53bb;
+      --color-green: #09fbd3;
+      --color-blue: #08f7fe;
+      --color-yellow: #f5d300;
+
+      --color-black: #000;
+      --color-white: #fff;
+      
+      }
+
+.header-container {
+     background: repeating-linear-gradient(
+        45deg,
+        #fe53bb,
+        #09fbd3 70px,
+        #08f7fe 70px,
+        #f5d300 140px);
+    height: 50vh;
+}
+
+body{
+     background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?cs=srgb&dl=pexels-henry-%26-co-1939485.jpg&fm=jpg");
+     background-size: 20%;  
+     background-image align-content: center;
+     margin: 0;
+     font-size: 100%;
+}
+

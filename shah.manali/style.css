@@ -63,7 +63,7 @@ a:hover {
    margin-right: auto;
 }
 
-display-flex { display:flex; }
+.display-flex { display:flex; }
 .display-block { display:block; }
 .display-inline-flex { display:inline-flex; }
 .display-inline-block { display:inline-block; }
@@ -93,7 +93,7 @@ display-flex { display:flex; }
 .navbar label, 
 .navbar a {
 	display: block;
-	padding: 0 0.5 em;
+	padding: 0 0.5em;
 	text-decoration: none;
 }
 .navbar a:hover {
