@@ -157,12 +157,18 @@ a:hover {
    width:100%;
    height:100%;
    overflow:hidden;
+   text-transform: uppercase;
 }
+
+
+
 [data-role='main'] {
    flex: 1 1 100%;
    overflow:hidden;
    position:relative;
 }
+
+
 .ui-header,
 .ui-footer {
    flex:none;
@@ -202,6 +208,14 @@ a:hover {
    padding:0 1em;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 45px;
+  margin-top: 3em;
+}
+
+
 
 
  /*MODALS */
@@ -213,6 +227,7 @@ a:hover {
     transition: all 0.3s;
     opacity: 0;
     pointer-events: none;
+    z-index: 10;
 }
 .modal.active {
    opacity:1;
@@ -284,6 +299,33 @@ a:hover {
 .modal-drawer .modal-body {
    flex: 1 1 100%;
 }
+
+
+/* MODAL TOAST */
+.modal-toast {
+   position: absolute;
+   width: 50%;
+   background-color: #e7ff3f;
+   box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
+   border-radius: 0.2em;
+   padding: 1em;
+   text-align: center;
+   left: 50%;
+   transition: all 0.3s;
+}
+.modal-toast.top {
+   top:1em;
+   transform: translate(-50%,-1em);
+}
+.modal-toast.bottom {
+   bottom:1em;
+   transform: translate(-50%,1em);
+}
+.modal.active .modal-toast {
+   transform: translate(-50%,0);
+   pointer-events: initial;
+}
+
 
 
 
