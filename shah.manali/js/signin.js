@@ -16,7 +16,7 @@ const checkSigninForm = () => {
 
    console.log(user,pass)
    if(user=="" || pass=="") {
-      makeWarning("#signin-warning-modal","Type a Username and Password");
+      makeWarning("#warning-modal","Type a Username and Password");
       return;
    }
 
@@ -31,7 +31,7 @@ const checkSigninForm = () => {
       sessionStorage.removeItem('userId');
 
       // DO SOMETHING HERE
-      makeWarning("#signin-warning-modal","Sign In Failed")
+      makeWarning("#warning-modal","Sign In Failed");
    }
 
    checkUserId();

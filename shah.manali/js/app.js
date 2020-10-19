@@ -1,10 +1,14 @@
 
+
 // Document Ready
 $(()=>{
 
    checkUserId();
 
    $(document)
+
+
+   /* FORM SUBMISSIONS */
 
    // event delegation
    .on("submit","#signin-form",function(e){
@@ -14,8 +18,8 @@ $(()=>{
 
 
 
+   /* ANCHOR CLICKS */
 
-   /* anchor clicks */
    .on("click",".js-logout",function(e){
       sessionStorage.removeItem('userId');
       checkUserId();
@@ -38,6 +42,17 @@ $(()=>{
       let target = $(this).data('toggle');
       $(target).toggleClass("active");
    })
+   ;
 
+
+
+
+
+
+   $("[data-template]").each(function(){
+      let target = $(this).data("template");
+      let template = $(target).html();
+      $(this).html(template);
+   })
 
 })
