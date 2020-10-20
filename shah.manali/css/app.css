@@ -41,10 +41,9 @@ body {
    font-family:var(--font-sans);
 }
 
-h1 {
+h1,h2 {
    font-family:var(--font-serif);
 }
-h2,
 h3,
 h4,
 h5,
@@ -121,6 +120,8 @@ a:hover {
     outline: 0;
 }
 .form-button {
+    border-radius: 0.5em;
+    color: #DBA49B;
     display: inline-block;
     width: 100%;
     border-width: 0;
@@ -156,7 +157,17 @@ a:hover {
 }
 
 
+.search-control{
+  margin: 1em 0;
 
+}
+
+.search-bar{
+    margin: 1em 0;
+    border-radius: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
 
 /* PAGE LAYOUTS */
@@ -257,22 +268,23 @@ a:hover {
 
 .plantlist-type,
 .plantlist-color {
+   
    font-size:1em;
-   padding-left: 0.5em;
+   padding-left: 0.75em;
 }
 
 .plantlist-name {
    
-   padding-left: 0.5em;
+   padding-left: 0.2em;
    padding-top: 0.5em;
    font-kerning: 0.2em; 
-   font-size: 1.5em;
-   padding-bottom: 0.2em;
+   font-size: 2em;
+   padding-bottom:0em;
 }
 
 .plantlist-description {
    font-size:0.8em;
-   padding-left: 1.5em;
+   padding-left: 1.75em;
    padding-right: 1.5em;
    
 }
@@ -362,12 +374,24 @@ a:hover {
    flex: 1 1 100%;
 }
 
+.modal-foot input {
+   display:block;
+   width:100%;
+   text-align:right;
+   border-width:0;
+   font-weight:bold;
+   background-color:transparent;
+   outline:0;
+   color:var(--color-main-orange);
+  font-size: 1em;
+}
+
 
 /* MODAL TOAST */
 .modal-toast {
    position: absolute;
    width: 50%;
-   background-color: #e7ff3f;
+   background-color: #DBA49B;
    box-shadow: 1px 1px 5px rgba(0,0,0,0.15);
    border-radius: 0.2em;
    padding: 1em;
@@ -431,5 +455,43 @@ a:hover {
    font-size:1.5em;
    margin-bottom: 1em;
 }
+
+
+.settings-list {
+   list-style-type:none;
+   margin:0;
+   padding:0;
+}
+
+.settings-item a {
+   display:block;
+   padding:0.5em 1em;
+   border-bottom:1px solid var(--color-neutral-lighter);
+   position:relative;
+}
+.settings-item a:not([href='#'])::after {
+   content:'>';
+   position:absolute;
+   top:50%;
+   right:1em;
+   transform:translateY(-50%);
+}
+
+.nav-icon img {
+   width:1em;
+   height:1em;
+   vertical-align: text-bottom;
+}
+.nav-icon {
+   line-height:calc(var(--header-height) * 0.6);
+   font-size:1.5em;
+}
+.nav-label {
+   line-height:calc(var(--header-height) * 0.4);
+   font-size:0.7em;
+}
+
+
+
 
 
