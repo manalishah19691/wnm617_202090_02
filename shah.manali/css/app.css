@@ -9,6 +9,11 @@
    --font-serif: eldwin-script,sans-serif;
    --font-sans: Futura, sans-serif;
 
+/* --color-neutral-lighter: #7394A0; (blue)
+ --color-neutral-lighter: #B5CFCF; (baby blue)
+ --color-neutral-lighter: #DBA49B; (peach)
+*/
+
 
 
    --color-neutral-lighter: #D4E6CA;
@@ -99,6 +104,8 @@ a:hover {
     font-size: 0.8em;
     color: var(--color-neutral-medium);
     margin: 0.5rem 0;
+    border-radius: 1em;
+    padding-left: 1.5em;
 }
 .ui-mobile label {
    margin:0.5rem 0;
@@ -234,10 +241,11 @@ a:hover {
    background-size:cover;
   display:block;
   flex-direction: column;
-  margin: 1em;
+  margin: 2em;
   border-radius: 1em;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   overflow: hidden;
+  text-align: left;
 }
 
 .plantlist-image {
@@ -246,6 +254,30 @@ a:hover {
  rgba($dark, 0.65) );
  background-size: cover;
 }
+
+.plantlist-type,
+.plantlist-color {
+   font-size:1em;
+   padding-left: 0.5em;
+}
+
+.plantlist-name {
+   
+   padding-left: 0.5em;
+   padding-top: 0.5em;
+   font-kerning: 0.2em; 
+   font-size: 1.5em;
+   padding-bottom: 0.2em;
+}
+
+.plantlist-description {
+   font-size:0.8em;
+   padding-left: 1.5em;
+   padding-right: 1.5em;
+   
+}
+
+
 
 
  /*MODALS */
@@ -385,11 +417,12 @@ a:hover {
 
 /* PROFILE */
 .profile-image img {
-    border-radius: 50%;
-    width: calc(100vw - 4em);
-    height: calc(100vw - 4em);
+    border-radius: 10%;
+    width: calc(75vw - -2em);
+    height: calc(75vw - 2em);
     object-fit: cover;
     margin: 2em;
+
 }
 .profile-body {
    padding:1em;
