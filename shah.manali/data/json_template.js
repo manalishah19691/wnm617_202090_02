@@ -20,8 +20,8 @@
     type: '{{random("leaf","flower")}}',
     color: function(tags) {
       var colors = {
-        "leaf":["lime","while","green"],
-        "flower":["purple","rainbow","orange"]
+        "leaf":["lime","white","green"],
+        "flower":["purple","yellow","orange"]
       };
       var chosen_type = colors[this.type];
       var chosen_index = tags.integer(0,chosen_type.length-1);
