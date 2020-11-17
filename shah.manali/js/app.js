@@ -1,5 +1,7 @@
 
 
+
+
 // Document Ready
 $(()=>{
 
@@ -7,17 +9,17 @@ $(()=>{
 
    $(document)
 
+
+   // ROUTES
    .on("pagecontainerbeforeshow",function(e,ui){
       console.log(ui.toPage[0].id)
 
-
-// Routing
+      // Routing
       switch(ui.toPage[0].id) {
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
-         case 'plant-profile-page': PlantProfilePage(); break;
-
+         case 'plant-profile-page': plantProfilePage(); break;
       }
    })
 
@@ -49,6 +51,8 @@ $(()=>{
 
 
 
+
+
    .on("click","[data-activate]",function(){
       let target = $(this).data('activate');
       $(target).addClass("active");
@@ -75,3 +79,5 @@ $(()=>{
    })
 
 })
+
+
