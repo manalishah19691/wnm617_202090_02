@@ -9,7 +9,7 @@ const RecentPage = async() => {
 
    console.log(d)
 
-   let valid_animals = d.result.reduce((r,o)=>{
+   let valid_plants = d.result.reduce((r,o)=>{
       o.icon = o.img;
       if(o.lat && o.lng) r.push(o);
       return r;
@@ -20,9 +20,33 @@ const RecentPage = async() => {
 
    //console.log(map_el.data('map'))
 
-   makeMarkers(map_el,valid_animals);
+   makeMarkers(map_el,valid_plants);
+    // makeMarkers(map_el,[]);
 
+   map_el.data("markers").forEach((o,i)=>{
+      o.addListener("click",function(){
+         // console.log("honk")
+         
+/*
+         // SIMPLE EXAMPLE
+         sessionStorage.plantId = valid_plants[i].plant_id;
+         $.mobile.navigate("#plant-profile-page");
+         */
+
+   // INFOWINDOW EXAMPLE
+         // map_el.data("infoWindow")
+         //    .open(map_el.data("map"),o);
+         // map_el.data("infoWindow")
+         //    .setContent(makeplantPopup(valid_plants[i]));
+
+         // ACTIVATE EXAMPLE
+         $("#recent-plant-modal").addClass("active");
+         $("#recent-plant-modal .modal-body")
+            .html(makeplantPopup(valid_plants[i]))
+      })
+   })
 }
+
 
 
 //async and await
@@ -46,7 +70,7 @@ const UserProfilePage = async() => {
 
 
 
-const plantProfilePage = async() => {
+const PlantProfilePage = async() => {
    query({
       type:'plant_by_id',
       params:[sessionStorage.plantId]
@@ -66,6 +90,18 @@ const plantProfilePage = async() => {
       })
    })
    
+}
+
+const PlantProfileEditPage = async() => {
+   query({
+      type:'plant_by_id',
+      params:[sessionStorage.plantId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#plant-edit-form")
+         .html(makePlantProfileUpdateForm(d.result[0]));
+   });
 }
 
 
