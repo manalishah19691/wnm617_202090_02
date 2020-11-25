@@ -36,6 +36,13 @@ $(()=>{
       checkSigninForm();
    })
 
+  /* FORM SUBMIT BY BUTTON */
+  
+   .on("click",".js-location-add",function(e){
+      checkLocationAddForm();
+   })
+
+
 
 
    /* ANCHOR CLICKS */

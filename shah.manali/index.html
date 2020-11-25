@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,7 @@
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
+   <script src="js/forms.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     
@@ -95,12 +97,16 @@
 
 
 
-   <section data-role="page" id="signup-page">
-   <div data-role="main" class="display-flex flex-align-center flex-justify-center">
+     <section data-role="page" id="signup-page">
+      <div data-role="main" class="display-flex flex-align-center flex-justify-center">
          <form id="signup-form" data-ajax="false">
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
+            </div>
+            <div class="form-control">
+               <label for="signup-email" class="form-label">Email</label>
+               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
@@ -108,10 +114,10 @@
             </div>
             <div class="form-control">
                <label for="signup-password-confirm" class="form-label">Confirm Password</label>
-               <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Retype your password">
             </div>
             <div class="form-control">
-               <a href="#recent-page" class="form-button">Sign Up</a>
+               <input type="submit" class="form-button" value="Sign Up" data-role="none">
             </div>
             <div class="form-control signin-alt">
                Already have an account?
@@ -120,6 +126,7 @@
          </form>
       </div>
    </section>
+
 
 
 
@@ -357,6 +364,48 @@
      </form>
      </section>
 
+
+
+
+   
+   <section data-role="page" id="location-add-page">
+      <header data-role="header">
+         <h1>Choose Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#location-description-page">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="location-add-lat">
+         <input type="hidden" id="location-add-lng">
+         <div class="map"></div>
+      </div>
+   </section>
+
+
+
+<section data-role="page" id="location-description-page">
+      <header data-role="header">
+         <h1>Describe Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-location-add">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <div class="overscroll">
+            <form id="location-add-form" data-ajax="false" style="padding:1em">
+               <div class="form-control">
+                  <label for="location-add-description" class="form-label">Description</label>
+                  <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
+               </div>
+            </form>
+         </div>
+      </div>
+   </section>
 
 
 

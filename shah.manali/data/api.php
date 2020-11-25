@@ -100,6 +100,42 @@ function makeStatement($data) {
 
 
 
+      // CRUD
+
+      // INSERT
+
+       case "insert_user":
+         $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",[$p[0],$p[1]]);
+         if(count($r['result'])) return ['error'=>"Username or Email already exists"];
+         if(count($r['result'])) return ['error'=>"Username or Email already exists"];
+
+         $r = makeQuery($c,"INSERT INTO
+            `track_users`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ",$p);
+         return ["id"=>$c->lastInsertId()];
+
+      default: return ["error"=>"No Matched type"];
+   }
+}
+
+
+ case "insert_location":
+         $r = makeQuery($c,"INSERT INTO
+            `track_locations`
+            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
+
+
+
+
+
 $data = json_decode(file_get_contents("php://input"));
 
 
