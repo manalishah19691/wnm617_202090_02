@@ -20,7 +20,7 @@ $(()=>{
          case 'list-page': ListPage(); break;
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-profile-edit-page': UserProfileEditPage(); break;
-         case 'plant-profile-page': plantProfilePage(); break;
+         case 'plant-profile-page': PlantProfilePage(); break;
          case 'plant-profile-edit-page': AnimalProfileEditPage(); break;
       }
    })

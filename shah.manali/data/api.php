@@ -94,9 +94,6 @@ function makeStatement($data) {
             GROUP BY l.plant_id
             ",$p);
 
-      default: return ["error"=>"No Matched type"];
-   }
-}
 
 
 
@@ -117,12 +114,8 @@ function makeStatement($data) {
             ",$p);
          return ["id"=>$c->lastInsertId()];
 
-      default: return ["error"=>"No Matched type"];
-   }
-}
 
-
- case "insert_location":
+      case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
             (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
@@ -133,6 +126,14 @@ function makeStatement($data) {
 
 
 
+
+
+
+
+      default: return ["error"=>"No Matched type"];
+
+   }
+}
 
 
 
