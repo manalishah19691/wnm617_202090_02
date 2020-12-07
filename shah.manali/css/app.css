@@ -518,6 +518,7 @@ a:hover {
    width:1em;
    height:1em;
    vertical-align: text-bottom;
+   object-fit: cover;
 }
 .nav-icon {
    line-height:calc(var(--header-height) * 0.6);
@@ -567,7 +568,11 @@ a:hover {
 
 
 
-
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+}
 
 
 
