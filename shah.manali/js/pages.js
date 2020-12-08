@@ -51,23 +51,23 @@ const RecentPage = async() => {
 
 //async and await
 const ListPage = async() => {
-   let d = await query({type:'plants_by_user_id',params:[sessionStorage.userId]});
+   let d = await query({
+      type:'plants_by_user_id',
+      params:[sessionStorage.userId]
+   });
 
-
-   console.log(d)
-   console.log(makePlantList(d.result))
-
-   $("#list-page .plantlist").html(makePlantList(d.result));
-}
-
-const UserProfilePage = async() => {
-   let d = await query({type:'user_by_id',params:[sessionStorage.userId]});
+   $("#list-page .filter-list").html(makeFilterList(d.result))
 
    console.log(d)
 
-    $("#list-page .plantlist")
-      .html(d.result.length?makePlantList(d.result):'Hey Dummy, add an animal.');
+   drawPlantList(d.result);
 }
+
+
+
+
+
+
 
 
 

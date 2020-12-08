@@ -1,4 +1,10 @@
 
+const drawPlantList = (a,empty_phrase='Hey Dummy, add an plant.') => {
+   $("#list-page .plantlist")
+      .html(a.length?makePlantList(a):empty_phrase);
+}
+
+
 
 //o current object, i current index, a current array//
 
@@ -120,6 +126,21 @@ ${FormControl({
    value:o.email
 })}
 `;
+
+
+
+const filterList = (plants,type) => {
+   let a = [...(new Set(plants.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (plants) => {
+   return `
+   <div class="filter" data-field="type" data-value="all">All</div>  
+   ${filterList(plants,'type')}  
+   ${filterList(plants,'color')} 
+   `;
+}
 
 
 

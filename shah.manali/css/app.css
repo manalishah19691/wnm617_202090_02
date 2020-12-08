@@ -137,7 +137,58 @@ a:hover {
     color: #51413c;
 }
 
+.hotdog {
+   width:100%;
+   border: solid 2px #B5CFCF;
 
+   padding:0.5em 1em;
+   border-radius:0.5em;
+   line-height:0.75;
+   display:inline-flex;
+}
+.hotdog input {
+   background-color:transparent;
+   border-width:0;
+   font:inherit;
+   color:inherit;
+   border-radius:0;
+   padding:0;
+   margin:0;
+   width:100%;
+   flex:1;
+   outline:0;
+}
+.ui-header .hotdog {
+   height:calc(var(--header-height) - 0.3em);
+   vertical-align: middle;
+}
+
+
+.list-search {
+   padding:1em 1em;
+   display: flex;
+   align-items: center;
+}
+
+
+.filter-list {
+  padding-top: 0.2em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  overflow: auto;
+}
+
+.filter{
+    background-color: #B5CFCF;
+    margin: 0.2em;
+    opacity: 50%;
+    padding: 0.2em 0.75em;
+    align-items: center;
+    font-size: 0.9em;
+    border-radius: 1em;
+    display: inline-flex;
+}
 
 
 #signin-form,
@@ -527,6 +578,7 @@ a:hover {
 .nav-label {
    line-height:calc(var(--header-height) * 0.4);
    font-size:0.7em;
+   font-weight: 200;
 }
 
 

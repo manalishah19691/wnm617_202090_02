@@ -36,12 +36,18 @@ $(()=>{
       checkSigninForm();
    })
 
+   .on("submit","#list-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
+
+
   /* FORM SUBMIT BY BUTTON */
   
    .on("click",".js-location-add",function(e){
       checkLocationAddForm();
    })
-
+   
 
 
 
@@ -57,6 +63,23 @@ $(()=>{
       $.mobile.navigate("#plant-profile-page");
    })
 
+
+
+
+   .on("click",".filter",function(e){
+      checkListFilter($(this).data());
+   })
+   .on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         makeUploaderImage({
+            namespace:'user-upload',
+            folder:'uploads/',
+            name:d.result
+         })
+      })
+   })
 
 
 

@@ -3,13 +3,13 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#182D33;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#182D33;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#182D33;stroke-width:5.8895;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#182D33;stroke-width:6.8711;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
 <g>
-	<path class="st0" d="M268.08,178.01c0,66.01-53.53,119.54-119.54,119.54S29,244.02,29,178.01c0-37.07,16.87-70.2,43.34-92.12"/>
-	<circle class="st1" cx="186" cy="77.69" r="37.22"/>
-	<path class="st1" d="M272.57,91.2c0,49.4-86.57,136.89-86.57,136.89S99.44,140.61,99.44,91.2S138.2,1.75,186,1.75
-		S272.57,41.8,272.57,91.2z"/>
+	<path class="st0" d="M263.68,178.21c0,64.79-52.55,117.34-117.34,117.34S29,243,29,178.21c0-36.39,16.56-68.91,42.54-90.43"/>
+	<circle class="st1" cx="183.11" cy="79.74" r="36.54"/>
+	<path class="st1" d="M268.08,93c0,48.49-84.97,134.37-84.97,134.37S98.14,141.5,98.14,93s38.05-87.8,84.97-87.8
+		S268.08,44.51,268.08,93z"/>
 </g>
 </svg>

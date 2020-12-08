@@ -94,7 +94,47 @@ function makeStatement($data) {
             GROUP BY l.plant_id
             ",$p);
 
+    
 
+
+
+
+
+    case "search_plants":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_plants`
+            WHERE
+               `name` LIKE ?
+               AND user_id = ?
+            ",$p);
+
+      case "plant_search_recent":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_plants` a
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON a.id = l.plant_id
+            WHERE 
+               a.name LIKE ?
+               AND a.user_id = ?
+            GROUP BY l.plant_id
+            ",$p);
+
+      case "plant_filter":
+         return makeQuery($c,"SELECT * FROM
+            `track_plants`
+            WHERE
+               `$p[0]` = ?
+               AND user_id = ?
+            ",[$p[1],$p[2]]);
+
+
+
+      
 
 
       // CRUD
@@ -118,7 +158,7 @@ function makeStatement($data) {
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`animal_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            (`plant_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
             VALUES
             (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
             ",$p,false);

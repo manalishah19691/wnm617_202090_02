@@ -32,7 +32,7 @@ const checkLocationAddForm = () => {
 
    query({
       type:'insert_location',
-      params:[sessionStorage.animalId,lat,lng,description]})
+      params:[sessionStorage.plantId,lat,lng,description]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -41,6 +41,45 @@ const checkLocationAddForm = () => {
       window.history.go(-2);
    })
 }
+
+
+
+
+const checkSearchForm = async () => {
+   let s = $("#list-search-input").val();
+   console.log(s)
+
+   let r = await query({type:"search_plants",params:[s,sessionStorage.userId]});
+
+   drawPlantList(r.result,'No results found');
+
+   console.log(r)
+}
+
+
+
+const checkListFilter = async (d) => {
+   let r = d.value=='all' ?
+      await query({
+         type:'plants_by_user_id',
+         params:[sessionStorage.userId]
+      }) :
+      await query({
+         type:'plant_filter',
+         params:[d.field,d.value,sessionStorage.userId]
+      });
+
+   console.log(r)
+   drawPlantList(r.result,'No results found');
+}
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,7 +164,6 @@
          <h1>Add New Location</h1>
         
       </header>
-
                </div>
                <div class="modal-body overscroll" style="padding: 0em;">
          
@@ -198,139 +196,30 @@
 
 
 
+ <section data-role="page" id="list-page">
+     
+       
+            <div class="flex-stretch list-search">
+               <form class="hotdog" id="list-search-form" data-ajax="false">
+                  <input type="search" id="list-search-input" data-role="none" placeholder="Looking for a plant ?">
+               </form>
+            </div>
+     
+        
+         <div class="filter-list"></div>
 
-   <section data-role="page" id="list-page">
-      <header data-role="header">
-         <h1>List Page</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#addnew-page" data-activate="#list-add-modal" data-ajax="false" >&plus;</a></li>
-         </ul>
-      </header>
       <div data-role="main">
          <div class="overscroll">
-         <div class="search-control">
-            <div class="display-flex search-bar ">
-            <input type="text" class="flex-stretch" id="search" data-role="none">
-           
+            <div class="plantlist"></div>
          </div>
-          <div class="overscroll">
-         
-            <!-- <ul class="grid-container"> -->
-               <!-- li*10>a[href=#plant-profile-page]{plant $} -->
-               <!-- <li><img src="img/plant1.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page">plant 1</a></li>
-               <li><img src="img/plant2.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 2</a></li>
-               <li><img src="img/plant3.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 3</a></li>
-               <li><img src="img/plant4.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 4</a></li>
-               <li><img src="img/plant5.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 5</a></li>
-               <li><img src="img/plant6.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 6</a></li>
-               <li><img src="img/plant7.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 7</a></li>
-               <li><img src="img/plant8.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 8</a></li>
-               <li><img src="img/plant9.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page" >plant 9</a></li>
-               <li><img src="img/plant10.jpeg" alt="plant1" style="width:5em;height:5em;border-radius:0.5rem;"><a href="#plant-profile-page">plant 10</a></li> -->
-         
-<!-- 
-            </ul> -->
-
-
-
-
-         <div class="plantlist">
-               <a href="#plant-profile-page" class="plantlist-item" class="flex-stretch">
-                  <div class="plantlist-image" style="background-image: url('img/violet.jpeg')">
-                     <!-- <img src="img/plant1.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Violet</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Flower</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>Purple</div>
-                  </div>
-               </a>
-               <a href="#plant-profile-page" class="plantlist-item">
-                  <div class="plantlist-image" style="background-image: url('img/zinia.jpeg')">
-                     <!-- <img src="img/plant2.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Zinia</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Flower</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>Grey</div>
-                  </div>
-               </a>
-               <a href="#plant-profile-page" class="plantlist-item">
-                  <div class="plantlist-image" style="background-image: url('img/alisa.jpeg')">
-                     <!-- <img src="img/plant3.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Alisa</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Flower</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>Rainbow</div>
-                  </div>
-               </a>
-               <a href="#plant-profile-page" class="plantlist-item">
-                  <div class="plantlist-image" style="background-image: url('img/aster.jpeg')">
-                     <!-- <img src="img/plant4.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Aster</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Leaf</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>Green</div>
-                  </div>
-               </a>
-               <a href="#plant-profile-page" class="plantlist-item">
-                  <div class="plantlist-image" style="background-image: url('img/casia.jpeg')">
-                     <!-- <img src="img/plant5.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Casia</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Leaf</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>Lime</div>
-                  </div>
-               </a>
-               <a href="#plant-profile-page" class="plantlist-item">
-                  <div class="plantlist-image" style="background-image: url('img/erica.jpeg')">
-                    <!--  <img src="img/plant6.jpeg" alt=""> -->
-                  </div>
-                  <div class="plantlist-description">
-                     <div class="plantlist-name" style="font-family: eldwin-script,sans-serif;">Erica</div>
-                     <div class="plantlist-type"><strong style="color:#DBA49B">Type </strong>Leaf</div>
-                     <div class="plantlist-color"><strong style="color:#DBA49B">Color </strong>White</div>
-                  </div>
-               </a>
-            </div>
+         <div class="floater right bottom">
+            <a href="#plant-add-page" class="btn-circle">&plus;</a>
          </div>
       </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
 
-
-            
-            </div>
-         </div>
-      </div>
-       <footer data-role="footer" data-template="#footer-template"></footer>
-
-<div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
-         <!-- <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add plant</div>
-            <div class="modal-body">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type plant name">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-type" class="form-label">Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type plant type">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-color" class="form-label">Color</label>
-                  <input id="list-add-color" type="text" class="form-input" data-role="none" placeholder="Type plant color">
-               </div>
-            </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
-            </div>
-         </div> -->
-      </div>
    </section>
+
 
     
 
@@ -378,11 +267,11 @@
 
 <!-- add new sucuulent -->
 
-<section data-role="page" id="addnew-page">
+<section data-role="page" id="plant-add-page">
       <header data-role="header">
          <h1>Add Succulent</h1>
           <ul>
-            <li class="flex-stretch"><a href="#list-page" >Back</a></li>
+            <li class="flex-stretch"><a href="#list-page" ><img src="img/back_icon.svg" alt class="icon"></a></li>
          </ul>
    </header>
      
@@ -612,7 +501,3 @@
 
 </body>
 </html>
-
-
-
-
