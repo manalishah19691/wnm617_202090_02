@@ -60,8 +60,7 @@
                <input type="submit" class="form-button" value="Sign In" data-role="none">
             </div>
             <div class="form-control signin-alt">
-               Don't have an account?
-               <a href="#signup-page" class="ui-link">Sign Up</a>
+               <a href="#signup-page" class="ui-link">New User</a>
                <br>
                <a href="#password-page" class="ui-link">Forgot Password?</a> 
             </div>
@@ -74,7 +73,7 @@
 
 
 
-   <section data-role="page" id="password-page">
+   <section data-role="page" id="forgot-password-page">
  <div data-role="main" class="display-flex flex-align-center flex-justify-center">         
    <form id="password-page" data-ajax="false">
             <!-- <div class="form-control">
@@ -82,12 +81,12 @@
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
             </div> -->
             <div class="form-control">
-               <label for="signup-password" class="form-label">New Password</label>
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <label for="forgot-password" class="form-label">New Password</label>
+               <input id="forgot-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
-               <label for="signup-password-confirm" class="form-label">Confirm Password</label>
-               <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <label for="forgot-password-confirm" class="form-label">Confirm Password</label>
+               <input id="forgot-password-confirm" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
             <div class="form-control">
                <a href="#recent-page" class="form-button">Change Password</a>
@@ -97,6 +96,7 @@
                <a href="#signin-page">Sign In</a>
             </div>
          </form>
+
       </div>
    </section>
 
@@ -109,8 +109,15 @@
       <div data-role="main" class="display-flex flex-align-center flex-justify-center">
          <form id="signup-form" data-ajax="false">
             <div class="form-control">
+               <label for="signup-firstname" class="form-label">First name</label>
+               <input id="signup-firstname" type="text" class="form-input" data-role="none" placeholder="Type your first name">
+            </div><div class="form-control">
+               <label for="signup-lastname" class="form-label">Last name</label>
+               <input id="signup-lastname" type="text" class="form-input" data-role="none" placeholder="Type your last name">
+            </div>
+            <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
-               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
+               <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Create your username">
             </div>
             <div class="form-control">
                <label for="signup-email" class="form-label">Email</label>
@@ -118,11 +125,11 @@
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
-               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+               <input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Create your password">
             </div>
             <div class="form-control">
                <label for="signup-password-confirm" class="form-label">Confirm Password</label>
-               <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Retype your password">
+               <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
             </div>
             <div class="form-control">
                <input type="submit" class="form-button" value="Sign Up" data-role="none">
@@ -196,9 +203,11 @@
 
 
 
+
+
+
+
  <section data-role="page" id="list-page">
-     
-       
             <div class="flex-stretch list-search">
                <form class="hotdog" id="list-search-form" data-ajax="false">
                   <input type="search" id="list-search-input" data-role="none" placeholder="Looking for a plant ?">
@@ -224,11 +233,15 @@
     
 
 
+
+
+
+
 <!-- plant profile page-->
 
     <section data-role="page" id="plant-profile-page">
       <header data-role="header">
-         <h1>Violet</h1>
+         <h1>About Succulent</h1>
          <ul>
             <li><a href="#list-page"  class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
@@ -239,29 +252,27 @@
          <div class="plant-top">
             <div class="map"></div>
             <div class="floater bottom-right">
-               <a href="location-add-page" class="btn-circle"><img src="img/add_icon.svg" alt class="icon">&plus;</a>
+               <a href="#location-add-page" class="btn-circle"><img src="img/add_icon.svg" alt class="icon">&plus;</a>
             </div>
          </div>
          <div class="overscroll">
          <div class="plant-bottom"></div>
 
-         <div class="profile-image">
-            <img src="img/violet.jpeg" alt="plant1">
+         <div class="profile">
+            <!-- <img src="img/violet.jpeg" alt="plant1"> -->
          </div>
-          <div class="profile-body">
-                     <div class="profile-name" style="font-family: eldwin-script,sans-serif;">Violet</div>
-                     <div class="profile-type"><strong style="color:#DBA49B;">Type </strong>Flower</div>
-                     <div class="profile-color"><strong style="color:#DBA49B;">Color </strong>Purple</div>
-                  
-                  <br><div class="profile-description"><strong style="color:#DBA49B;">Description </strong>
-                 <p>Exercitationem quia, nisi culpa neque reiciendis laudantium quidem eaque, totam fuga similique voluptatibus ullam labore facilis hic minima </p></div> 
-                 </div>  
-              </div>
+          
               </div>
          </div>
       </div>
       </div>
    </section>
+
+
+
+
+
+
 
 
 
@@ -306,14 +317,17 @@
 
 
 
+
+
+
    
    <section data-role="page" id="location-add-page">
       <header data-role="header">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#location-description-page">Next</a></li>
+            <li><a href="#location-description-page"><img src="img/back_icon.svg" alt class="icon" style="transform: rotate(180deg)"></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -322,6 +336,10 @@
          <div class="map"></div>
       </div>
    </section>
+
+
+
+
 
 
 
@@ -359,19 +377,7 @@
          </ul>
    </header>
       <div data-role="main">
-         <div class="profile-image">
-            <img src="img/user-profile.jpeg" alt="photo">
-         </div>
-         <div class="profile-body">
-            <div class="profile-name"><strong>Name</strong>: Manali</div>
-            <div class="profile-email"><strong>Email</strong>: manna@gmail.com</div>
-
-         </div>
-
-        <div class="form-control">
-               <a href="#signin-page" class="form-button">Logout</a>
-            </div>
-         
+         <div class="profile"></div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
@@ -387,6 +393,7 @@
          <ul class="settings-list">
             <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
             <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
+            <li class="settings-item"><a href="#" class="js-logout ui-link">Logout</a></li>
             
          </ul>
       </div>
@@ -476,8 +483,11 @@
          </div>
       </div>
 
-
-
+   <div class="modal" id="warning-modal">
+         <div class="modal-toast top"  data-deactivate="#signup-warning-modal">
+            <div class="message">Message</div>
+         </div>
+      </div>
 
 
 

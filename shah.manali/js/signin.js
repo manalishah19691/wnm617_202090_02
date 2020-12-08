@@ -44,6 +44,7 @@ const checkSigninForm = async () => {
 }
 
 
+
 const checkUserId = () => {
    let p = ['#signin-page','#signup-page',''];
 

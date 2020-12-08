@@ -8,7 +8,20 @@ const checkSignupForm = () => {
    let password = $("#signup-password").val();
    let passwordconfirm = $("#signup-password-confirm").val();
 
-   if(password!=passwordconfirm) {
+
+   let found_signup_user = await query({
+      type:'check_signin',
+      params:[username,email]
+   });
+   
+   if(found_signup_user.result.length) {
+   makeWarning("#warning-modal","Username or Email already exists!");
+
+   if(user=="" || email=="" || pass=="" || conf_pass=="") {
+      makeWarning("#warning-modal","You missed something!");
+
+
+   else if(password!=passwordconfirm) {
       throw "Passwords don't match";
    } else {
       query({type:'insert_user',params:[username,email,password]})
@@ -17,7 +30,9 @@ const checkSignupForm = () => {
             throw d.error;
          }
          console.log(d.id)
-         $.mobile.navigate("#signin-page");
+         sessionStorage.userId = d.id;
+         $("#signup-form")[0].reset();
+         $.mobile.navigate("#recent-page");
       })
    }
 }

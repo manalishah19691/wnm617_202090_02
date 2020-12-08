@@ -65,7 +65,43 @@ const ListPage = async() => {
 
 
 
+const UserProfilePage = async() => {
+   let d = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
 
+   console.log(d)
+
+   $("#user-profile-page .profile")
+      .html(makeUserProfile(d.result));
+}
+const UserEditPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#user-edit-form")
+         .html(makeUserEditForm(d.result[0]));
+   });
+}
+
+const UserUploadPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      makeUploaderImage({
+         namespace:'user-upload',
+         folder:'',
+         name:d.result[0].img
+      })
+   });
+}
 
 
 
@@ -79,7 +115,7 @@ const PlantProfilePage = async() => {
       console.log(d)
 
       $("#plant-profile-page .profile")
-         .html(makeplantProfile(d.result));
+         .html(makePlantProfile(d.result));
    });
 
    query({

@@ -29,8 +29,9 @@ const makeUserProfile = templater(o=>`
    <div class="profile-name">${o.name}</div>
    <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
 </div>
-<p><a href="#settings-page">Settings</a></p>
 `)
+
+
 
 const makePlantProfile = templater(o=>`
 <div class="profile-image">
@@ -42,6 +43,8 @@ const makePlantProfile = templater(o=>`
    <div class="profile-color"><strong>Color</strong>: ${o.color}</div>
 </div>
 `);
+
+
 
 
 const makePlantPopup = o=>`
