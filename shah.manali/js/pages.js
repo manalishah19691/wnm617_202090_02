@@ -69,6 +69,14 @@ const ListPage = async() => {
 
 
 
+
+
+
+
+
+
+
+
 const UserProfilePage = async() => {
    let d = await query({
       type:'user_by_id',
@@ -81,6 +89,9 @@ const UserProfilePage = async() => {
       .html(makeUserProfile(d.result));
 }
 
+
+
+
 const UserEditPage = async() => {
    query({
       type:'user_by_id',
@@ -92,6 +103,9 @@ const UserEditPage = async() => {
          .html(makeUserEditForm(d.result[0]));
    });
 }
+
+
+
 
 const UserUploadPage = async() => {
    query({
@@ -107,6 +121,13 @@ const UserUploadPage = async() => {
       })
    });
 }
+
+
+
+
+
+
+
 
 
 
@@ -138,6 +159,9 @@ const PlantProfilePage = async() => {
    
 }
 
+
+
+
 const PlantEditPage = async() => {
    query({
       type:'plant_by_id',
@@ -146,9 +170,14 @@ const PlantEditPage = async() => {
       console.log(d)
 
       $("#plant-edit-form")
-         .html(makePlantProfileUpdateForm(d.result[0]));
+         .html(makePlantEditForm(d.result[0]));
    });
 }
+
+
+
+
+
 
 
 

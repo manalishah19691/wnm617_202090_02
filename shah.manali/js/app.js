@@ -21,12 +21,12 @@ $(()=>{
 
 
          case 'user-profile-page': UserProfilePage(); break;
-         case 'user-profile-edit-page': UserProfileEditPage(); break;
+         case 'user-edit-page': UserProfilePage(); break;
 
 
          case 'plant-profile-page': PlantProfilePage(); break;
-         case 'plant-profile-edit-page': AnimalEditPage(); break;
-         
+         case 'plant-edit-page': PlantEditPage(); break;
+
 
          case 'location-add-page': LocationAddPage(); break;
       }
@@ -89,6 +89,30 @@ $(()=>{
       sessionStorage.plantId = $(this).data("id");
       $.mobile.navigate("#plant-profile-page");
    })
+
+   .on("click",".js-plant-jump",function(e){
+      sessionStorage.plantId = $(this).data("id");
+      $.mobile.navigate("#plant-profile-page");
+   })
+
+   .on("click",".js-location-jump",function(e){
+      sessionStorage.locationId = $(this).data("id");
+      $.mobile.navigate("#location-profile-page");
+   })
+
+   .on("click",".js-plant-delete",function(e){
+      checkPlantDelete($(this).data("id"));
+   })
+
+   .on("click",".js-user-upload",function(e){
+      checkUserUpload();
+   })
+
+
+
+
+
+
 
 
 

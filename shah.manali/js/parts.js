@@ -73,9 +73,18 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 }
 
 
+
+
+
 const makePlantEditForm = o => `
+<div>
+   <input type="hidden" id="plant-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="plant-edit-upload">
+   </label>
+</div>
 ${FormControl({
-   namespace:"Plant-edit",
+   namespace:"plant-edit",
    name:"name",
    displayname:"Name",
    type:"text",
@@ -83,7 +92,7 @@ ${FormControl({
    value:o.name
 })}
 ${FormControl({
-   namespace:"Plant-edit",
+   namespace:"plant-edit",
    name:"type",
    displayname:"Type",
    type:"text",
@@ -91,16 +100,16 @@ ${FormControl({
    value:o.type
 })}
 ${FormControl({
-   namespace:"Plant-edit",
+   namespace:"plant-edit",
    name:"color",
-   displayname:"color",
+   displayname:"Color",
    type:"text",
-   placeholder:"Type Plant Color",
+   placeholder:"Type plant Color",
    value:o.color
 })}
 <div class="form-control">
    <label for="plant-edit-description" class="form-label">Description</label>
-   <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type Plant Description">${o.description}</textarea>
+   <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type plant description">${o.description}</textarea>
 </div>
 `;
 
@@ -136,9 +145,15 @@ ${FormControl({
 
 
 
+const toUppercase = (o) => {
+   return o==''?'':o[0].toUpperCase()+o.substr(1);
+}
+
+
+
 const filterList = (plants,type) => {
    let a = [...(new Set(plants.map(o=>o[type])))];
-   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${toUppercase(o)}</div>`)(a);
 }
 
 const makeFilterList = (plants) => {

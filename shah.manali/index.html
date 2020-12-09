@@ -250,7 +250,7 @@
          <div class="plant-top">
             <div class="map"></div>
             <div class="floater bottom-right">
-               <a href="#location-add-page" class="btn-circle"><img src="img/add_icon.svg" alt class="icon">&plus;</a>
+               <a href="#location-add-page" class="btn-circle"><img src="img/add_icon.svg" alt class="icon"></a>
             </div>
          </div>
          <div class="overscroll">
@@ -305,7 +305,7 @@
             </div>
             </div>
              <div class="form-control">
-               <a href="#list-page" class= "js-animal-add form-button">Save</a>
+               <a href="#list-page" class= "js-plant-add form-button">Save</a>
             </div>
            </div>
         </div>
@@ -314,21 +314,22 @@
 
 
 
-   <section data-role="page" id="plant-edit-page">
+
+
+
+ <section data-role="page" id="plant-edit-page">
       <header data-role="header">
          <h1>Plant Info</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-plant-edit">Save</a></li>
+            <li><a href="#" class="js-plant-edit"><img src="img/save_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
          <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
-
-
 
 
 
@@ -403,7 +404,6 @@
 
 
 
-
 <!-- user profile page -->
 
 <section data-role="page" id="user-profile-page">
@@ -411,7 +411,7 @@
       <h1>My Profile</h1>
          <ul>
            <li class="flex-stretch"></li>
-            <li><a href="#settings-page" class="nav-icon"><img src="img/settings_icon.svg" alt class="icon"><div class="nav-label">Settings</div></a></li>
+            <li><a href="#settings-page"><img src="img/settings_icon.svg" alt class="icon"></a></li>
          </ul>
    </header>
       <div data-role="main">
@@ -434,7 +434,7 @@
       </header>
       <div data-role="main">
          <ul class="settings-list">
-            <li class="settings-item"><a href="#profile-settings-page">Profile Settings</a></li>
+            <li class="settings-item"><a href="#user-edit-page">Profile Settings</a></li>
             <li class="settings-item"><a href="#password-settings-page">Change Password</a></li>
             <li class="settings-item"><a href="#" class="js-logout ui-link">Logout</a></li>
             
@@ -445,41 +445,22 @@
 
 
 
-
    <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
-            <li><a href="#settings-page" class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
-            
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-edit">Save</a></li>
          </ul>
+
       </header>
-      <div data-role="main" style="padding:1em">
-
-         <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="img/user-profile.png" alt="profile" viewBox="0 0 100 100" class="user-profile-image">
-         </div>
-
-         <form id="profile-edit-form" data-ajax="false">
-
-            <div class="form-control">
-               <label for="profile-edit-username" class="form-label">Username</label>
-               <input id="profile-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
-            </div>
-            <div class="form-control">
-               <label for="profile-edit-name" class="form-label">Full Name</label>
-               <input id="profile-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your name">
-            </div>
-            <div class="form-control">
-               <label for="profile-edit-email" class="form-label">Email</label>
-               <input id="profile-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
-               <div class="form-control">
-               <a href="#user-profile-page" class="form-button">Save</a>
-            </div>
-            </div>
-         </form>
+      <div data-role="main">
+         <form id="user-edit-form" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
+
+
 
 
 

@@ -275,10 +275,14 @@ a:hover {
    flex: 1 1 auto;
    text-align:center;
 }
+.ui.header a {
+  line-height: var(--header-height);
+}
+
 .ui-header a,
 .ui-footer a {
    display:block;
-   padding:0 1em;
+   padding:0 1rem;
 }
 
 /*.grid-container{
@@ -623,7 +627,7 @@ a:hover {
 
 
 
-.animal-top .profile-image img {
+.plant-top .profile-image img {
     width: 30vw;
     height: 30vw;
 }
