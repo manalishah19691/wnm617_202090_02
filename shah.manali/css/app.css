@@ -508,6 +508,16 @@ a:hover {
 
 
 /* PROFILE */
+
+.user-profile-image {
+  width:50vw;
+  height:50vw; 
+  padding-top: 2em;
+}
+
+
+
+
 .profile-image img {
     border-radius: 10%;
     width: calc(100vw - 8em);

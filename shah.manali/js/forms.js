@@ -2,32 +2,33 @@
 
 
 
-const checkSignupForm = () => {
-   let username = $("#signup-username").val();
+const checkSignupForm = async () => {
+   let user = $("#signup-username").val();
    let email = $("#signup-email").val();
-   let password = $("#signup-password").val();
-   let passwordconfirm = $("#signup-password-confirm").val();
+   let pass = $("#signup-password").val();
+   let conf_pass = $("#signup-password-confirm").val();
 
 
-   let found_signup_user = await query({
-      type:'check_signin',
-      params:[username,email]
-   });
+   //let found_signup_user = await query({
+   //   type:'check_signin',
+   //   params:[username,email]
+   //});
    
-   if(found_signup_user.result.length) {
-   makeWarning("#warning-modal","Username or Email already exists!");
 
-   if(user=="" || email=="" || pass=="" || conf_pass=="") {
+   if(user=="" || email=="" || pass=="" || conf_pass=="") 
       makeWarning("#warning-modal","You missed something!");
+   
 
-
-   else if(password!=passwordconfirm) {
+   if(pass!=conf_pass) {
       throw "Passwords don't match";
    } else {
-      query({type:'insert_user',params:[username,email,password]})
-      then(d=>{
+      query({type:'insert_user',params:[user,email,pass]})
+      .then(d=>{
          if(d.error) {
+
+               makeWarning("#warning-modal","Username or Email already exists!");
             throw d.error;
+
          }
          console.log(d.id)
          sessionStorage.userId = d.id;
@@ -36,6 +37,83 @@ const checkSignupForm = () => {
       })
    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+const checkPlantAddForm = () => {
+   let name = $("#plant-add-name").val();
+   let type = $("#plant-add-type").val();
+   let color = $("#plant-add-color").val();
+   let description = $("#plant-add-description").val();
+
+
+   query({
+      type:'insert_plant',
+      params:[sessionStorage.userId,name,type,color,description]})
+   .then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      console.log(d.id)
+
+      $("#plant-add-form")[0].reset();
+
+      sessionStorage.plantId = d.id;
+      $.mobile.navigate($("#plant-add-destination").val());
+   })
+}
+
+
+
+const checkPlantEditForm = () => {
+   let name = $("#plant-edit-name").val();
+   let type = $("#plant-edit-type").val();
+   let color = $("#plant-edit-color").val();
+   let description = $("#plant-edit-description").val();
+
+   query({
+      type:'update_plant',
+      params:[name,type,color,description,sessionStorage.plantId]})
+   .then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   })
+}
+
+
+
+const checkPlantDelete = id => {
+   query({
+      type:'delete_plant',
+      params:[id]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   });
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,15 +165,3 @@ const checkListFilter = async (d) => {
    console.log(r)
    drawPlantList(r.result,'No results found');
 }
-
-
-
-
-
-
-
-
-
-
-
-

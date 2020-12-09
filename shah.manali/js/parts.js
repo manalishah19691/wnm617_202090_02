@@ -23,7 +23,7 @@ const makePlantList = templater(o=>`
 
 const makeUserProfile = templater(o=>`
 <div class="profile-image">
-   <img src="${o.img}" alt="">
+   <img src="${o.img}" alt class="user-profile-image">
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
@@ -73,13 +73,13 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 }
 
 
-const makePlantProfileUpdateForm = o => `
+const makePlantEditForm = o => `
 ${FormControl({
    namespace:"Plant-edit",
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type An Plant Name",
+   placeholder:"Type Plant Name",
    value:o.name
 })}
 ${FormControl({
@@ -87,7 +87,7 @@ ${FormControl({
    name:"type",
    displayname:"Type",
    type:"text",
-   placeholder:"Choose An Plant Type",
+   placeholder:"Choose Plant Type",
    value:o.type
 })}
 ${FormControl({
@@ -98,11 +98,15 @@ ${FormControl({
    placeholder:"Type Plant Color",
    value:o.color
 })}
+<div class="form-control">
+   <label for="plant-edit-description" class="form-label">Description</label>
+   <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type Plant Description">${o.description}</textarea>
+</div>
 `;
 
 
 
-const makeUserProfileUpdateForm = o => `
+const makeUserEditForm = o => `
 <form id="user-edit-form" data-ajax="false" style="padding:1em">
 ${FormControl({
    namespace:"user-edit",

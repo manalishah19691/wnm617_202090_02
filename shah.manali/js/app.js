@@ -18,10 +18,17 @@ $(()=>{
       switch(ui.toPage[0].id) {
          case 'recent-page': RecentPage(); break;
          case 'list-page': ListPage(); break;
+
+
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-profile-edit-page': UserProfileEditPage(); break;
+
+
          case 'plant-profile-page': PlantProfilePage(); break;
-         case 'plant-profile-edit-page': AnimalProfileEditPage(); break;
+         case 'plant-profile-edit-page': AnimalEditPage(); break;
+         
+
+         case 'location-add-page': LocationAddPage(); break;
       }
    })
 
@@ -36,6 +43,11 @@ $(()=>{
       checkSigninForm();
    })
 
+   .on("submit","#signup-form",function(e){
+      e.preventDefault();
+      checkSignupForm();
+   })
+
    .on("submit","#list-search-form",function(e){
       e.preventDefault();
       checkSearchForm();
@@ -44,9 +56,24 @@ $(()=>{
 
   /* FORM SUBMIT BY BUTTON */
   
+   .on("click",".js-plant-add",function(e){
+      checkPlantAddForm();
+   })
+
+   .on("click",".js-plant-edit",function(e){
+      checkPlantEditForm();
+   })
+   .on("click",".js-user-edit",function(e){
+      checkUserEditForm();
+   })
+
    .on("click",".js-location-add",function(e){
       checkLocationAddForm();
    })
+
+
+
+
    
 
 

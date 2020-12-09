@@ -65,6 +65,10 @@ const ListPage = async() => {
 
 
 
+
+
+
+
 const UserProfilePage = async() => {
    let d = await query({
       type:'user_by_id',
@@ -76,6 +80,7 @@ const UserProfilePage = async() => {
    $("#user-profile-page .profile")
       .html(makeUserProfile(d.result));
 }
+
 const UserEditPage = async() => {
    query({
       type:'user_by_id',
@@ -107,6 +112,10 @@ const UserUploadPage = async() => {
 
 
 
+
+
+
+
 const PlantProfilePage = async() => {
    query({
       type:'plant_by_id',
@@ -129,7 +138,7 @@ const PlantProfilePage = async() => {
    
 }
 
-const PlantProfileEditPage = async() => {
+const PlantEditPage = async() => {
    query({
       type:'plant_by_id',
       params:[sessionStorage.plantId]
@@ -140,6 +149,10 @@ const PlantProfileEditPage = async() => {
          .html(makePlantProfileUpdateForm(d.result[0]));
    });
 }
+
+
+
+
 
 
 

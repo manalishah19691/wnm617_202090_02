@@ -60,7 +60,7 @@
                <input type="submit" class="form-button" value="Sign In" data-role="none">
             </div>
             <div class="form-control signin-alt">
-               <a href="#signup-page" class="ui-link">New User</a>
+               <a href="#signup-page" class="ui-link">Create Account</a>
                <br>
                <a href="#password-page" class="ui-link">Forgot Password?</a> 
             </div>
@@ -109,11 +109,11 @@
       <div data-role="main" class="display-flex flex-align-center flex-justify-center">
          <form id="signup-form" data-ajax="false">
             <div class="form-control">
-               <label for="signup-firstname" class="form-label">First name</label>
+               <!-- <label for="signup-firstname" class="form-label">First name</label>
                <input id="signup-firstname" type="text" class="form-input" data-role="none" placeholder="Type your first name">
             </div><div class="form-control">
                <label for="signup-lastname" class="form-label">Last name</label>
-               <input id="signup-lastname" type="text" class="form-input" data-role="none" placeholder="Type your last name">
+               <input id="signup-lastname" type="text" class="form-input" data-role="none" placeholder="Type your last name"> -->
             </div>
             <div class="form-control">
                <label for="signup-username" class="form-label">Username</label>
@@ -132,7 +132,7 @@
                <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
             </div>
             <div class="form-control">
-               <input type="submit" class="form-button" value="Sign Up" data-role="none">
+               <input type="submit" class="form-button" value="Create Acoount" data-role="none">
             </div>
             <div class="form-control signin-alt">
                Already have an account?
@@ -141,6 +141,17 @@
          </form>
       </div>
    </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -165,40 +176,20 @@
                <div class="modal-body"></div>
             </div>
          </div>
-
-   
-<!-- <header data-role="header">
-         <h1>Add New Location</h1>
-        
-      </header>
-               </div>
-               <div class="modal-body overscroll" style="padding: 0em;">
-         
-         <div data-role="#recent-add-modal" style="padding:1em">
-         <form id="user-password-form" data-ajax="false">
-            <div class="form-control">
-               <label for="list-add-name" class="form-label">Name</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Plant Name">
-            </div>
-            <div class="form-control">
-              <label for="list-add-type" class="form-label">Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Plant Type">
-            </div>
-            <div class="form-control">
-                <label for="list-add-breed" class="form-label">Color</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Plant Color">
-            </div>
-             <div class="modal-foot" >
-               <input type="submit" value="Save" data-role="none">
-            </div>
-         </form>
-         </div>
-      </div>
-   </div>
-</div>
-</div> -->
+        </div>
        <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -237,6 +228,12 @@
 
 
 
+
+
+
+
+
+
 <!-- plant profile page-->
 
     <section data-role="page" id="plant-profile-page">
@@ -245,7 +242,8 @@
          <ul>
             <li><a href="#list-page"  class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#addnew-page" class="nav-icon"><img src="img/edit_icon.svg" alt class="icon"></a></li>
+            <li><a href="#addnew-page" class="nav-icon">
+               <li><a href="#plant-edit-page"><img src="img/edit_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -272,10 +270,6 @@
 
 
 
-
-
-
-
 <!-- add new sucuulent -->
 
 <section data-role="page" id="plant-add-page">
@@ -292,8 +286,8 @@
             <img src="img/addprofile.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw; padding-top: 2em">
          </div>
 
-         <form id="addnew-form" data-ajax="false">
-        <!--  <div class=" display-flex  flex-justify-center"> -->
+         <form id="plant-add-form" data-ajax="false">
+         <input type="hidden" id="plant-add-destination" value="#list-page">
          <div class="form-control">
                   <label for="plant-add-name" class="form-label">Name</label>
                   <input id="plant-add-name" type="text" class="form-input" data-role="none" placeholder="Type plant name">
@@ -305,14 +299,46 @@
                <div class="form-control">
                   <label for="plant-add-color" class="form-label">Color</label>
                   <input id="plant-add-color" type="text" class="form-input" data-role="none" placeholder="Type plant color">
+            <div class="form-control">
+               <label for="plant-add-description" class="form-label">Description</label>
+               <textarea id="plant-add-description" class="form-input" data-role="none" placeholder="Type plant description"></textarea>
+            </div>
             </div>
              <div class="form-control">
-               <a href="#list-page" class="form-button">Save</a>
+               <a href="#list-page" class= "js-animal-add form-button">Save</a>
             </div>
            </div>
         </div>
      </form>
      </section>
+
+
+
+   <section data-role="page" id="plant-edit-page">
+      <header data-role="header">
+         <h1>Plant Info</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-plant-edit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+         <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
+      </div>
+   </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -341,8 +367,6 @@
 
 
 
-
-
 <section data-role="page" id="location-description-page">
       <header data-role="header">
          <h1>Describe Location</h1>
@@ -366,6 +390,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- user profile page -->
 
 <section data-role="page" id="user-profile-page">
@@ -381,6 +419,11 @@
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
    </section>
+
+
+
+
+
 
    <section data-role="page" id="settings-page">
       <header data-role="header">
@@ -403,7 +446,7 @@
 
 
 
-   <section data-role="page" id="profile-settings-page">
+   <section data-role="page" id="user-edit-page">
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
@@ -414,22 +457,22 @@
       <div data-role="main" style="padding:1em">
 
          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
-            <img src="img/user-profile.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw; padding-top: 2em">
+            <img src="img/user-profile.png" alt="profile" viewBox="0 0 100 100" class="user-profile-image">
          </div>
 
-         <form id="profile-form" data-ajax="false">
+         <form id="profile-edit-form" data-ajax="false">
 
             <div class="form-control">
-               <label for="profile-username" class="form-label">Username</label>
-               <input id="profile-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
+               <label for="profile-edit-username" class="form-label">Username</label>
+               <input id="profile-edit-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
             </div>
             <div class="form-control">
-               <label for="profile-name" class="form-label">Full Name</label>
-               <input id="profile-name" type="text" class="form-input" data-role="none" placeholder="Type your name">
+               <label for="profile-edit-name" class="form-label">Full Name</label>
+               <input id="profile-edit-name" type="text" class="form-input" data-role="none" placeholder="Type your name">
             </div>
             <div class="form-control">
-               <label for="profile-email" class="form-label">Email</label>
-               <input id="profile-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
+               <label for="profile-edit-email" class="form-label">Email</label>
+               <input id="profile-edit-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
                <div class="form-control">
                <a href="#user-profile-page" class="form-button">Save</a>
             </div>
@@ -469,6 +512,11 @@
          </form>
       </div>
    </section>
+
+
+
+
+
 
 
 

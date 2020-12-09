@@ -148,13 +148,31 @@ function makeStatement($data) {
 
          $r = makeQuery($c,"INSERT INTO
             `track_users`
-            (`username`,`email`,`password`,`img`,`date_create`)
+            (`name`,`username`,`email`,`password`,`img`,`date_create`)
             VALUES
-            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ('',?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
             ",$p);
          return ["id"=>$c->lastInsertId()];
 
 
+
+
+
+           case "insert_plant":
+         $r = makeQuery($c,"INSERT INTO
+            `track_plants`
+            (`user_id`,`name`,`type`,`color`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PLANT', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
+
+
+
+
+
+      
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
@@ -164,16 +182,68 @@ function makeStatement($data) {
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
+        
 
 
 
 
+      // UPDATE STATEMENTS
+
+      case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `username` = ?,
+               `name` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+     
+
+
+
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+    
+
+
+
+      case "update_plant":
+         $r = makeQuery($c,"UPDATE
+            `track_plants`
+            SET
+               `name` = ?,
+               `type` = ?,
+               `color` = ?,
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+
+      // DELETE STATEMENTS
+
+      case "delete_plant":
+         return makeQuery($c,"DELETE FROM `track_plants` WHERE `id` = ?",$p,false);
+
+      case "delete_location":
+         return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
 
 
       default: return ["error"=>"No Matched type"];
-
    }
 }
+
+
 
 
 
