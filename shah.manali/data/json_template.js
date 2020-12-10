@@ -40,6 +40,56 @@
   }
 ]
 
+
+
+//Updated Plant template//
+
+[
+  '{{repeat(250)}}',
+  {
+    id: '{{index(1)}}',
+    user_id:'{{integer(1,10)}}',
+    
+    name: '{{company()}}',
+    
+    
+    type: '{{random("Leaf","Flower","Cactus")}}',
+    
+    category: '{{random("Hens & Chicks","Jade","Zebra","Sunburst")}}',
+    
+    shape: '{{random("Rose","Ball","Tongue", "Ear" )}}',
+    
+    pattern: '{{random("Pointy-tips","Fine-haired","Striped","Thorns")}}',
+    
+    description: '{{random("The leaves of this plant start off as a light green shade that turns darker in the sun.","This succulent prefers full sun, which is why it grows best in outdoor gardens.","They are most commonly placed in flower beds or borders and like to grow together in clusters.","Most leaves have rounded edges that with good care can live up to 100 years!","They are known for sprouting colorful flower clusters that look great in a summer garden.")}}',
+    
+    img: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) +
+        '/fff/?text=' +
+        this.name;
+    },
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //User template//
 
     [
@@ -68,6 +118,22 @@
 ]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Location template//
 
 [
@@ -88,6 +154,52 @@
     date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]
+
+
+//Updated Location template//
+
+
+[
+  '{{repeat(250)}}',
+  {
+    id: '{{index(1)}}',
+    plant_id:'{{integer(1,50)}}',
+    
+    lat: '{{floating(37.807977,37.705497)}}',
+    lng: '{{floating(-122.524981,-122.358388)}}',
+    
+    plant_health: '{{random("Poor","Good","Excellent")}}',
+    
+    description: '{{lorem(1, "sentences")}}',
+    
+    photo: 'https://via.placeholder.com/400/',
+    icon: 'https://via.placeholder.com/100/?text=ICON',
+    
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

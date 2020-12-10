@@ -301,7 +301,47 @@ a:hover {
   padding: 1.5em;
 }*/
 
+
+
+.plantlist {
+   padding:1em;
+  
+}
+.plantlist-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    vertical-align: text-bottom;
+    border-radius: 5px;
+}
 .plantlist-item {
+    display: flex;
+    margin: 1em 0;
+    border-radius: 1em;
+    
+    
+}
+.plantlist-item:first-child {
+   margin-top:0;
+}
+.plantlist-description {
+   padding:0.5em;
+}
+.plantlist-type,
+.plantlist-color {
+   font-size:0.8em;
+   display: contents;
+}
+.plantlist-name {
+   font-size:1.2em;
+}
+
+
+
+
+
+
+/*.plantlist-item {
   height: 40vh;
   background-position:center;
    background-size:cover;
@@ -342,7 +382,7 @@ a:hover {
    padding-left: 1.75em;
    padding-right: 1.5em;
    
-}
+}*/
 
 
 
