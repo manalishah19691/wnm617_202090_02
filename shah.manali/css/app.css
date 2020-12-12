@@ -318,15 +318,24 @@ a:hover {
     display: flex;
     margin: 1em 0;
     border-radius: 1em;
-    
+
     
 }
 .plantlist-item:first-child {
    margin-top:0;
 }
-.plantlist-description {
+.plantlist-info {
    padding:0.5em;
+
 }
+
+.plantlist-description {
+   font: 0.75em sans-serif;
+   color: #7394A0;
+}
+
+
+
 .plantlist-type,
 .plantlist-color {
    font-size:0.8em;
@@ -336,7 +345,11 @@ a:hover {
    font-size:1.2em;
 }
 
-
+.plantlist-type img {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+}
 
 
 
@@ -457,6 +470,10 @@ a:hover {
    height:30vh;
    width:100%;
 }
+.modal-drawer.bottom{
+  margin: 1em;
+  width: calc(100% - 2em);
+}
 
 .modal-drawer.top { top:0; transform:translateY(-100%); }
 .modal-drawer.bottom { bottom:0; transform:translateY(100%); }
@@ -560,7 +577,13 @@ a:hover {
 }
 
 
+/*user profile page name*/
+.name {
+}
 
+.user-info{
+padding-bottom: 1em;
+}
 
 .profile-image img {
     border-radius: 10%;

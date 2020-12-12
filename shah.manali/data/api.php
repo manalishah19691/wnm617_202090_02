@@ -48,6 +48,41 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 }
 
 
+
+
+
+
+
+
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ['result'=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "_FILES"=>$_FILES,
+      "filename"=>$filename
+   ];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function makeStatement($data) {
    $c = makeConn();
    $t = @$data->type;
@@ -94,13 +129,12 @@ function makeStatement($data) {
             GROUP BY l.plant_id
             ",$p);
 
-    
 
 
 
 
 
-    case "search_plants":
+      case "search_plants":
          $p = ["%$p[0]%",$p[1]];
          return makeQuery($c,"SELECT * FROM
             `track_plants`
@@ -134,56 +168,42 @@ function makeStatement($data) {
 
 
 
-      
+
 
 
       // CRUD
 
       // INSERT
 
-       case "insert_user":
+      case "insert_user":
          $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",[$p[0],$p[1]]);
-         if(count($r['result'])) return ['error'=>"Username or Email already exists"];
          if(count($r['result'])) return ['error'=>"Username or Email already exists"];
 
          $r = makeQuery($c,"INSERT INTO
             `track_users`
-            (`name`,`username`,`email`,`password`,`img`,`date_create`)
+            (`firstname`,`lastname`,`username`,`email`,status`,`about`,`password`,`img`,`date_create`)
             VALUES
-            ('',?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
-            ",$p);
-         return ["id"=>$c->lastInsertId()];
-
-
-
-
-
-           case "insert_plant":
-         $r = makeQuery($c,"INSERT INTO
-            `track_plants`
-            (`user_id`,`name`,`type`,`color`,`description`,`img`,`date_create`)
-            VALUES
-            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PLANT', NOW())
+            ('',?, ?, ?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
+      case "insert_plant":
+         $r = makeQuery($c,"INSERT INTO
+            `track_plants`
+            (`user_id`,`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=plant', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
 
-
-
-
-
-      
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`plant_id`,`lat`,`lng`,`description`,`photo`,`icon`,`date_create`)
+            (`plant_id`,`lat`,`lng`,`plant_health`,`description`,`photo`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
-
-        
-
 
 
 
@@ -200,10 +220,6 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
-     
-
-
-
       case "update_user_image":
          $r = makeQuery($c,"UPDATE
             `track_users`
@@ -213,10 +229,6 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
-    
-
-
-
       case "update_plant":
          $r = makeQuery($c,"UPDATE
             `track_plants`
@@ -224,7 +236,8 @@ function makeStatement($data) {
                `name` = ?,
                `type` = ?,
                `color` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
@@ -246,6 +259,17 @@ function makeStatement($data) {
 
 
 
+
+
+
+
+
+
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
+}
 
 $data = json_decode(file_get_contents("php://input"));
 

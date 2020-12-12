@@ -39,7 +39,7 @@ const RecentPage = async() => {
          // map_el.data("infoWindow")
          //    .setContent(makeplantPopup(valid_plants[i]));
 
-         // ACTIVATE EXAMPLE
+         // // ACTIVATE EXAMPLE
          $("#recent-plant-modal").addClass("active");
          $("#recent-plant-modal .modal-body")
             .html(makeplantPopup(valid_plants[i]))

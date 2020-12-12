@@ -3,6 +3,8 @@
 
 
 const checkSignupForm = async () => {
+   let firstname = $("#signup-firstname").val();
+   let lastname = $("#signup-lastname").val();
    let user = $("#signup-username").val();
    let email = $("#signup-email").val();
    let pass = $("#signup-password").val();
@@ -15,7 +17,7 @@ const checkSignupForm = async () => {
    //});
    
 
-   if(user=="" || email=="" || pass=="" || conf_pass=="") 
+   if(firstname=="" || lastname==""|| user=="" || email=="" || pass=="" || conf_pass=="") 
       makeWarning("#warning-modal","You missed something!");
    
 
@@ -41,14 +43,20 @@ const checkSignupForm = async () => {
 
 
 
+
+
+
 const checkUserEditForm = () => {
+   let firstname = $("#user-edit-firstname").val();
+   let lastname = $("#user-edit-lastname").val();
    let username = $("#user-edit-username").val();
-   let name = $("#user-edit-name").val();
    let email = $("#user-edit-email").val();
+   let status = $("#user-edit-status").val();
+   let about = $("#user-edit-about").val();
 
    query({
       type:'update_user',
-      params:[username,name,email,sessionStorage.userId]})
+      params:[firstname,lastname,username,email,status,about,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -64,25 +72,18 @@ const checkUserEditForm = () => {
 
 
 
-
-
-
-
-
-
-
-
-
 const checkPlantAddForm = () => {
    let name = $("#plant-add-name").val();
    let type = $("#plant-add-type").val();
-   let color = $("#plant-add-color").val();
+   let category = $("#plant-add-category").val();
+   let shape = $("#plant-add-shape").val();
+   let pattern = $("#plant-add-pattern").val();
    let description = $("#plant-add-description").val();
 
 
    query({
       type:'insert_plant',
-      params:[sessionStorage.userId,name,type,color,description]})
+      params:[sessionStorage.userId,name,type,category,shape,pattern,description]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -101,12 +102,14 @@ const checkPlantAddForm = () => {
 const checkPlantEditForm = () => {
    let name = $("#plant-edit-name").val();
    let type = $("#plant-edit-type").val();
-   let color = $("#plant-edit-color").val();
+   let category = $("#plant-edit-category").val();
+   let shape = $("#plant-edit-shape").val();
+   let pattern = $("#plant-edit-pattern").val();
    let description = $("#plant-edit-description").val();
 
    query({
       type:'update_plant',
-      params:[name,type,color,description,sessionStorage.plantId]})
+      params:[name,type,category,shape,pattern,description,sessionStorage.plantId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -135,13 +138,6 @@ const checkPlantDelete = id => {
 
 
 
-
-
-
-
-
-
-
 const checkLocationAddForm = () => {
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
@@ -162,6 +158,9 @@ const checkLocationAddForm = () => {
 
 
 
+
+
+
 const checkSearchForm = async () => {
    let s = $("#list-search-input").val();
    console.log(s)
@@ -172,6 +171,10 @@ const checkSearchForm = async () => {
 
    console.log(r)
 }
+
+
+
+
 
 
 
@@ -189,3 +192,7 @@ const checkListFilter = async (d) => {
    console.log(r)
    drawPlantList(r.result,'No results found');
 }
+
+
+
+

@@ -26,3 +26,4 @@ const checkData = (exterior_check) => new Promise((resolve,reject)=>{
    }
    interior_check();
 });
+

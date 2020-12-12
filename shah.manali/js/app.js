@@ -90,11 +90,6 @@ $(()=>{
       $.mobile.navigate("#plant-profile-page");
    })
 
-   .on("click",".js-plant-jump",function(e){
-      sessionStorage.plantId = $(this).data("id");
-      $.mobile.navigate("#plant-profile-page");
-   })
-
    .on("click",".js-location-jump",function(e){
       sessionStorage.locationId = $(this).data("id");
       $.mobile.navigate("#location-profile-page");

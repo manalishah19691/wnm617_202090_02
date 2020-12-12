@@ -13,21 +13,26 @@ const makePlantList = templater(o=>`
    <div class="plantlist-image">
       <img src="${o.img}" alt="">
    </div>
-   <div class="plantlist-description">
-      <div class="plantlist-name">${o.name}</div>
-      <div class="plantlist-type"><strong>type</strong> ${o.type}</div>
-      <div class="plantlist-color"><strong>color</strong> <span class="color-dot" style="background-color:${o.color}"></span></div>
+   <div class="plantlist-info">
+      <div class="flex-stretch"><div class="plantlist-name">${o.name}</div>
+      <div class="plantlist-type"><img src="img/${o.type}.svg" alt=""></div></div>
+       <div class="plantlist-description">${o.description}</div>
    </div>
 </div>
 `);
+
+
 
 const makeUserProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt class="user-profile-image">
 </div>
 <div class="profile-body">
-   <div class="profile-name">${o.name}</div>
+   <div class="name flex-stretch"><h1>${o.firstname} ${o.lastname}</h1></div>
+   <div class="user-info"><div class="profile-email"><strong>Status-</strong>: ${o.status}</div>
    <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
+   <div class="profile-email"><strong>About</strong>: ${o.about}</div></div>
+   
 </div>
 `)
 
@@ -39,8 +44,12 @@ const makePlantProfile = templater(o=>`
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
-   <div class="profile-type"><strong>Type</strong>: ${o.type}</div>
-   <div class="profile-color"><strong>Color</strong>: ${o.color}</div>
+   <div class="profile-type">Type-:<img src="img/${o.type}.svg" alt=""></div>
+   <div class="profile-color">Category: ${o.category}</div>
+   <div class="profile-color">Shape: ${o.shape}</div>
+   <div class="profile-color">Pattern: ${o.pattern}</div>
+   <div class="profile-color">Desicription: ${o.description}</div>
+
 </div>
 `);
 
@@ -48,15 +57,13 @@ const makePlantProfile = templater(o=>`
 
 
 const makePlantPopup = o=>`
-<div class="display-flex">
+<div class="display-flex" "modal-body">
 <div>
-   <img src="${o.img}" alt="" style="width:100px;height:100px">
+   <img src="${o.img}" alt="" style="width:100px;height:100px;border-radius:3px">
 </div>
 <div>
    <div class="profile-name">${o.name}</div>
-   <div><strong>Type</strong>: ${o.type}</div>
-   <div><strong>Color</strong>: ${o.color}</div>
-</div>
+   <div>Type:<img src="img/${o.type}.svg" alt=""></div>
 </div>
 <div>
 <a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Visit</a> 
@@ -160,7 +167,10 @@ const makeFilterList = (plants) => {
    return `
    <div class="filter" data-field="type" data-value="all">All</div>  
    ${filterList(plants,'type')}  
-   ${filterList(plants,'color')} 
+   ${filterList(plants,'category')}
+   ${filterList(plants,'shape')} 
+   ${filterList(plants,'pattern')}
+
    `;
 }
 
