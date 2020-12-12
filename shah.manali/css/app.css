@@ -347,6 +347,7 @@ a:hover {
    font-size:1.2em;
 }
 
+.plant-health,
 .plantlist-type img {
   display: inline-block;
   width: 1.25em;
@@ -429,6 +430,11 @@ a:hover {
    transform:translate(-50%,calc(-50% + 3em));
    width: 80vw;
 }
+
+.popup-description {
+  padding-left: 1em;
+}
+
 .modal-body {
     background-color: var(--color-white);
     padding: 1em;
@@ -707,18 +713,16 @@ padding-bottom: 1em;
 
 
 
-
-
-
-
-
-
 .color-dot {
   display:inline-block;
   width:1rem;
   height:1rem;
   border-radius:1em;
 }
+
+
+
+
 
 
 .image-uploader.full {
