@@ -21,7 +21,7 @@ $(()=>{
 
 
          case 'user-profile-page': UserProfilePage(); break;
-         case 'user-edit-page': UserProfilePage(); break;
+         case 'user-edit-page': UserEditPage(); break;
 
 
          case 'plant-profile-page': PlantProfilePage(); break;

@@ -44,11 +44,11 @@ const makePlantProfile = templater(o=>`
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
-   <div class="profile-type">Type-:<img src="img/${o.type}.svg" alt=""></div>
-   <div class="profile-color">Category: ${o.category}</div>
-   <div class="profile-color">Shape: ${o.shape}</div>
-   <div class="profile-color">Pattern: ${o.pattern}</div>
-   <div class="profile-color">Desicription: ${o.description}</div>
+   <div class="profile-type plantlist-type" style="padding:1em">Type:<img src="img/${o.type}.svg" alt=""></div>
+   <div class="profile-category">Category: ${o.category}</div>
+   <div class="profile-shape">Shape: ${o.shape}</div>
+   <div class="profile-pattern">Pattern: ${o.pattern}</div>
+   <div class="profile-description">Description: ${o.description}</div>
 
 </div>
 `);
@@ -66,7 +66,7 @@ const makePlantPopup = o=>`
    <div>Type:<img src="img/${o.type}.svg" alt=""></div>
 </div>
 <div>
-<a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Visit</a> 
+<a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Profile</a> 
 </div>
 `;
 
@@ -108,15 +108,34 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:"plant-edit",
-   name:"color",
-   displayname:"Color",
+   name:"category",
+   displayname:"Category",
    type:"text",
-   placeholder:"Type plant Color",
-   value:o.color
+   placeholder:"Type plant category",
+   value:o.category
+})}
+${FormControl({
+   namespace:"plant-edit",
+   name:"shape",
+   displayname:"Shape",
+   type:"text",
+   placeholder:"Type plant shape",
+   value:o.shape
+})}
+${FormControl({
+   namespace:"plant-edit",
+   name:"pattern",
+   displayname:"Pattern",
+   type:"text",
+   placeholder:"Type pattern of plant",
+   value:o.pattern
 })}
 <div class="form-control">
    <label for="plant-edit-description" class="form-label">Description</label>
    <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type plant description">${o.description}</textarea>
+</div>
+<div class="form-control">
+<a href="#plant-profile-page" class="form-button js-plant-edit">Save</a>
 </div>
 `;
 
@@ -134,11 +153,19 @@ ${FormControl({
 })}
 ${FormControl({
    namespace:"user-edit",
-   name:"name",
-   displayname:"Full Name",
+   name:"firstname",
+   displayname:"First Name",
    type:"text",
-   placeholder:"Type Your Full Name",
-   value:o.name
+   placeholder:"Type Your First Name",
+   value:o.firstname
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"lastname",
+   displayname:"Last Name",
+   type:"text",
+   placeholder:"Type Your Last Name",
+   value:o.lastname
 })}
 ${FormControl({
    namespace:"user-edit",
@@ -148,6 +175,10 @@ ${FormControl({
    placeholder:"Type Your Email",
    value:o.email
 })}
+<div class="form-control">
+   <label for="user-edit-aboutn" class="form-label">About</label>
+   <textarea id="uder-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
+</div>
 `;
 
 
@@ -167,9 +198,7 @@ const makeFilterList = (plants) => {
    return `
    <div class="filter" data-field="type" data-value="all">All</div>  
    ${filterList(plants,'type')}  
-   ${filterList(plants,'category')}
-   ${filterList(plants,'shape')} 
-   ${filterList(plants,'pattern')}
+   
 
    `;
 }

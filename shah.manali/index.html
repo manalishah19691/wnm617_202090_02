@@ -81,6 +81,10 @@
                <input id="signup-username" type="text" class="form-input" data-role="none" placeholder="Type your username">
             </div> -->
             <div class="form-control">
+               <label for="forgot-password" class="form-label">Email</label>
+               <input id="forgot-password" type="password" class="form-input" data-role="none" placeholder="Type your email">
+            </div>
+            <div class="form-control">
                <label for="forgot-password" class="form-label">New Password</label>
                <input id="forgot-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
             </div>
@@ -323,7 +327,7 @@
          <ul>
             <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-plant-edit"><img src="img/save_icon.svg" alt class="icon"></a></li>
+            <li><a href="#" class="js-plant-delete"><img src="img/delete_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -411,13 +415,24 @@
       <h1>My Profile</h1>
          <ul>
            <li class="flex-stretch"></li>
-            <li><a href="#settings-page"><img src="img/settings_icon.svg" alt class="icon"></a></li>
+            <li><a href="#settings-page"><img src="img/settings_icon.svg" alt class="icon" data-activate="#settings-popup"></a></li>
          </ul>
    </header>
       <div data-role="main">
          <div class="profile"></div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
+      
+
+      <div class="modal" id="settings-popup">
+         <div class="modal-back" data-deactivate="#settings-popup"></div>
+         <div class="modal-popup">
+            <div class="modal-head"><div><a href="#user-edit-page" data-deactivate="#settings-popup">Edit Profile Info</a></div></div>
+            <div class="modal-head"><div><a href="#user-upload-page" data-deactivate="#settings-popup">Edit Profile Image</a></div></div>
+            <div class="modal-head"><div><a href="#password-settings-page" data-deactivate="#settings-popup">Change Password</a></div></div>
+            <div class="modal-foot"><div class="js-logout" data-deactivate="#list-add-modal">Logout</div></div>
+         </div>
+      </div>
    </section>
 
 
@@ -425,11 +440,36 @@
 
 
 
-   <section data-role="page" id="settings-page">
+  
+  <section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Edit Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload"><img src="img/save_icon.svg" alt class="icon"></a></li>
+         </ul>
+
+      </header>
+      <div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+
+         </form>
+      </div>
+   </section>
+
+
+
+
+   <!-- <section data-role="page" id="settings-page">
       <header data-role="header">
          <h1>Settings Page</h1>
          <ul>
-            <li><a href="#user-profile-page" class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li><a href="#user-profile-page"><img src="img/back_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -441,7 +481,7 @@
          </ul>
       </div>
    </section>
-
+ -->
 
 
 
@@ -449,9 +489,9 @@
       <header data-role="header">
          <h1>Profile Settings</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#user-profile-page"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-edit">Save</a></li>
+            <li><a href="#" class="js-user-edit"><img src="img/save_icon.svg" alt class="icon"></a></li>
          </ul>
 
       </header>
@@ -470,7 +510,7 @@
       <header data-role="header">
          <h1>Password Settings</h1>
          <ul>
-            <li><a href="#settings-page" class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li><a href="#user-profile-page" class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" style="padding:1em">

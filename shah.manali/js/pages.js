@@ -42,7 +42,7 @@ const RecentPage = async() => {
          // // ACTIVATE EXAMPLE
          $("#recent-plant-modal").addClass("active");
          $("#recent-plant-modal .modal-body")
-            .html(makeplantPopup(valid_plants[i]))
+            .html(makePlantPopup(valid_plants[i]))
       })
    })
 }

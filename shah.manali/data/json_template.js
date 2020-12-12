@@ -45,7 +45,7 @@
 //Updated Plant template//
 
 [
-  '{{repeat(250)}}',
+  '{{repeat(50)}}',
   {
     id: '{{index(1)}}',
     user_id:'{{integer(1,10)}}',

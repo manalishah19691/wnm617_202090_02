@@ -196,3 +196,35 @@ const checkListFilter = async (d) => {
 
 
 
+
+
+
+
+const checkUpload = file => {
+   let fd = new FormData();
+   fd.append("image",file);
+
+   return fetch('data/api.php',{
+      method:'POST',
+      body:fd
+   }).then(d=>d.json())
+}
+
+const checkUserUpload = () => {
+   let upload = $("#user-upload-image").val()
+   if(upload=="") return;
+
+   query({
+      type:'update_user_image',
+      params:[upload,sessionStorage.userId]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   })
+}
+
+
+
+
