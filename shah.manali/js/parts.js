@@ -185,12 +185,12 @@ ${FormControl({
    displayname:"Status",
    type:"text",
    placeholder:"Type Your Status",
-   value:o.email
+   value:o.status
 })}
 
 <div class="form-control">
-   <label for="user-edit-aboutn" class="form-label">About</label>
-   <textarea id="uder-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
+   <label for="user-edit-about" class="form-label">About</label>
+   <textarea id="user-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
 </div>
 `;
 
