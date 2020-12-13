@@ -29,8 +29,8 @@ const makeUserProfile = templater(o=>`
 </div>
 <div class="profile-body">
    <div class="name flex-stretch"><h1>${o.firstname} ${o.lastname}</h1></div>
-   <div class="user-info"><div class="profile-email"><strong>Status-</strong>: ${o.status}</div>
    <div class="profile-email"><strong>Email</strong>: ${o.email}</div>
+   <div class="user-info profile-email"><strong>Status</strong>: ${o.status}</div>
    <div class="profile-email"><strong>About</strong>: ${o.about}</div></div>
    
 </div>
@@ -177,6 +177,14 @@ ${FormControl({
    displayname:"Email",
    type:"text",
    placeholder:"Type Your Email",
+   value:o.email
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"status",
+   displayname:"Status",
+   type:"text",
+   placeholder:"Type Your Status",
    value:o.email
 })}
 

@@ -225,7 +225,7 @@ case "insert_user":
             `track_locations`
             (`plant_id`,`lat`,`lng`,`plant_health`,`map_description`,`photo`,`icon`,`date_create`)
             VALUES
-            ('', ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
+            ('', ?, ?, ?, ?, ?, '', 'https://via.placeholder.com/400/?text=LOCATION', 'https://via.placeholder.com/100/?text=ICON', NOW())
             ",$p,false);
          if(isset($r['error'])) return $r;
          return ["id"=>$c->lastInsertId()];
