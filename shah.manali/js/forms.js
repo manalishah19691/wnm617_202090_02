@@ -54,7 +54,7 @@ const checkUserEditForm = () => {
 
    query({
       type:'update_user',
-      params:[firstname,lastname,username,email,status,about,sessionStorage.userId]})
+      params:[username,firstname,lastname,email,status,about,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

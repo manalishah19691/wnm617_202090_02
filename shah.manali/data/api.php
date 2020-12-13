@@ -241,7 +241,9 @@ case "insert_user":
                `username` = ?,
                `firstname` = ?,
                `lastname` = ?,
-               `email` = ?
+               `email` = ?,
+               `status` = ?,
+               `about` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];

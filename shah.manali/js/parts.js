@@ -179,6 +179,7 @@ ${FormControl({
    placeholder:"Type Your Email",
    value:o.email
 })}
+
 <div class="form-control">
    <label for="user-edit-aboutn" class="form-label">About</label>
    <textarea id="uder-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
