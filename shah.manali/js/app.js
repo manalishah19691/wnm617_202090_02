@@ -5,6 +5,7 @@
 // Document Ready
 $(()=>{
 
+
    checkUserId();
 
    $(document)
@@ -22,6 +23,7 @@ $(()=>{
 
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
+         case 'user-upload-page': UserUploadPage(); break;
 
 
          case 'plant-profile-page': PlantProfilePage(); break;
@@ -63,6 +65,7 @@ $(()=>{
    .on("click",".js-plant-edit",function(e){
       checkPlantEditForm();
    })
+
    .on("click",".js-user-edit",function(e){
       checkUserEditForm();
    })

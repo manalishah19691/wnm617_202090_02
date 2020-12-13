@@ -125,7 +125,7 @@
             </div>
             <div class="form-control">
                <label for="signup-email" class="form-label">Email</label>
-               <input id="signup-email" type="text" class="form-input" data-role="none" placeholder="Type your email">
+               <input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
             </div>
             <div class="form-control">
                <label for="signup-password" class="form-label">Password</label>
@@ -136,7 +136,7 @@
                <input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
             </div>
             <div class="form-control">
-               <input type="submit" class="form-button" value="Create Acoount" data-role="none">
+               <input type="submit" class="form-button" value="Create Account" data-role="none">
             </div>
             <div class="form-control signin-alt">
                Already have an account?
@@ -244,7 +244,7 @@
       <header data-role="header">
          <h1>About Succulent</h1>
          <ul>
-            <li><a href="#list-page"  class="nav-icon"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
             <li><a href="#addnew-page" class="nav-icon">
                <li><a href="#plant-edit-page"><img src="img/edit_icon.svg" alt class="icon"></a></li>
@@ -280,7 +280,7 @@
       <header data-role="header">
          <h1>Add Succulent</h1>
           <ul>
-            <li class="flex-stretch"><a href="#list-page" ><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li class="flex-stretch"><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
          </ul>
    </header>
      
@@ -301,16 +301,26 @@
                   <input id="plant-add-type" type="text" class="form-input" data-role="none" placeholder="Type plant type">
                </div>
                <div class="form-control">
-                  <label for="plant-add-color" class="form-label">Color</label>
-                  <input id="plant-add-color" type="text" class="form-input" data-role="none" placeholder="Type plant color">
+                  <label for="plant-add-categoryr" class="form-label">Category</label>
+                  <input id="plant-add-category" type="text" class="form-input" data-role="none" placeholder="Type plant category">
+               </div>
+               <div class="form-control">
+                  <label for="plant-add-shape" class="form-label">Shape</label>
+                  <input id="plant-add-shape" type="text" class="form-input" data-role="none" placeholder="Type plant shape">
+               </div>
+               <div class="form-control">
+                  <label for="plant-add-pattern" class="form-label">Pattern</label>
+                  <input id="plant-add-pattern" type="text" class="form-input" data-role="none" placeholder="Type plant pattern">
+               </div>
             <div class="form-control">
                <label for="plant-add-description" class="form-label">Description</label>
                <textarea id="plant-add-description" class="form-input" data-role="none" placeholder="Type plant description"></textarea>
             </div>
-            </div>
-             <div class="form-control">
+               <div class="form-control">
                <a href="#list-page" class= "js-plant-add form-button">Save</a>
             </div>
+            </div>
+
            </div>
         </div>
      </form>
@@ -332,6 +342,8 @@
       </header>
       <div data-role="main" class="display-flex flex-column">
          <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
+      </div>
+</div>
       </div>
    </section>
 

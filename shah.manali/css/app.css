@@ -338,10 +338,8 @@ a:hover {
 
 
 
-.plantlist-type,
-.plantlist-color {
-   font-size:0.8em;
-   display: contents;
+.plantlist-type, {
+   font-size:0.75em;
 }
 .plantlist-name {
    font-size:1.2em;
@@ -354,6 +352,13 @@ a:hover {
   height: 1.25em;
 }
 
+.plant-health {
+  font-size: 0.75;
+}
+
+.map-description {
+  font-size: 0.5em;
+}
 
 
 
@@ -629,6 +634,22 @@ padding-bottom: 1em;
    padding-left: 0.75em;
 
 }
+
+#plant-profile-page .profile-image {
+   display:flex;
+   align-items:center;
+   justify-content:center;
+}
+
+
+#plant-profile-page .profile-image img {
+    width: calc(100vw - 8em);
+    height: calc(100vw - 8em);
+}
+
+
+
+
 
 .settings-list {
    list-style-type:none;

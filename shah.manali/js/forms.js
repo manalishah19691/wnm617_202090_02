@@ -3,12 +3,10 @@
 
 
 const checkSignupForm = async () => {
-   let firstname = $("#signup-firstname").val();
-   let lastname = $("#signup-lastname").val();
-   let user = $("#signup-username").val();
+   let username = $("#signup-username").val();
    let email = $("#signup-email").val();
-   let pass = $("#signup-password").val();
-   let conf_pass = $("#signup-password-confirm").val();
+   let password = $("#signup-password").val();
+   let passwordconfirm = $("#signup-password-confirm").val();
 
 
    //let found_signup_user = await query({
@@ -17,14 +15,14 @@ const checkSignupForm = async () => {
    //});
    
 
-   if(firstname=="" || lastname==""|| user=="" || email=="" || pass=="" || conf_pass=="") 
+   if(username=="" || email=="" || password=="" || passwordconfirm=="") 
       makeWarning("#warning-modal","You missed something!");
    
 
-   if(pass!=conf_pass) {
+   if(password!=passwordconfirm) {
       throw "Passwords don't match";
    } else {
-      query({type:'insert_user',params:[user,email,pass]})
+      query({type:'insert_user',params:[username,email,password]})
       .then(d=>{
          if(d.error) {
 
@@ -61,7 +59,7 @@ const checkUserEditForm = () => {
       if(d.error) {
          throw d.error;
       }
-      window.history.go(-2);
+      window.history.go(-1);
    })
 }
 
@@ -96,6 +94,29 @@ const checkPlantAddForm = () => {
       $.mobile.navigate($("#plant-add-destination").val());
    })
 }
+
+
+
+
+// const checkAnimalEditForm = () => {
+//    let name = $("#animal-edit-name").val();
+//    let type = $("#animal-edit-type").val();
+//    let breed = $("#animal-edit-breed").val();
+//    let description = $("#animal-edit-description").val();
+//    let image = $("#animal-edit-image").val();
+
+//    query({
+//       type:'update_animal',
+//       params:[name,type,breed,description,image,sessionStorage.animalId]})
+//    .then(d=>{
+//       if(d.error) {
+//          throw d.error;
+//       }
+//       window.history.back();
+//    })
+// }
+
+
 
 
 

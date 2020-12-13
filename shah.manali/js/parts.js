@@ -1,5 +1,5 @@
 
-const drawPlantList = (a,empty_phrase='Hey Dummy, add an plant.') => {
+const drawPlantList = (a,empty_phrase='Hey Dummy, add a plant.') => {
    $("#list-page .plantlist")
       .html(a.length?makePlantList(a):empty_phrase);
 }
@@ -68,9 +68,12 @@ const makePlantPopup = o=>`
    <div class="map-description">${o.map_description}</div>
 </div>
 <div>
-<a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Profile</a> 
+<div class="form-control">
+<a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Profile</a>
+</div> 
 </div>
 `;
+
 
 
 
@@ -135,9 +138,8 @@ ${FormControl({
 <div class="form-control">
    <label for="plant-edit-description" class="form-label">Description</label>
    <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type plant description">${o.description}</textarea>
-</div>
 <div class="form-control">
-<a href="#plant-profile-page" class="form-button js-plant-edit">Save</a>
+ <a href="#plant-profile-page" class="form-button js-plant-edit">Save</a>
 </div>
 `;
 
