@@ -98,6 +98,53 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 
 
 
+const makeUserEditForm = o => `
+<form id="user-edit-form" data-ajax="false" style="padding:1em">
+${FormControl({
+   namespace:"user-edit",
+   name:"username",
+   displayname:"Username",
+   type:"text",
+   placeholder:"Type Your Username",
+   value:o.username
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"firstname",
+   displayname:"First Name",
+   type:"text",
+   placeholder:"Type Your First Name",
+   value:o.firstname
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"lastname",
+   displayname:"Last Name",
+   type:"text",
+   placeholder:"Type Your Last Name",
+   value:o.lastname
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"email",
+   displayname:"Email",
+   type:"text",
+   placeholder:"Type Your Email",
+   value:o.email
+})}
+${FormControl({
+   namespace:"user-edit",
+   name:"status",
+   displayname:"Status",
+   type:"text",
+   placeholder:"Type Your Status",
+   value:o.status
+})}
+<div class="form-control">
+   <label for="user-edit-about" class="form-label">About</label>
+   <textarea id="user-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
+</div>
+`;
 
 
 const makePlantEditForm = o => `
@@ -180,6 +227,7 @@ ${FormControl({
    <textarea id="location-edit-map_description" class="form-input" data-role="none" placeholder="About Location">${o.map_description}</textarea>
 </div>
 `;
+
 
 
 

@@ -283,10 +283,9 @@ case "insert_user":
                `shape` = ?,
                `pattern` = ?,
                `description` = ?
-               `img` = ?
             WHERE `id` = ?
             ",$p,false);
-                  return ["result"=>"success"];
+                  return ["result"=>"$r"];
 
 
 

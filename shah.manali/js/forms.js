@@ -45,9 +45,9 @@ const checkSignupForm = async () => {
 
 
 const checkUserEditForm = () => {
+   let username = $("#user-edit-username").val();
    let firstname = $("#user-edit-firstname").val();
    let lastname = $("#user-edit-lastname").val();
-   let username = $("#user-edit-username").val();
    let email = $("#user-edit-email").val();
    let status = $("#user-edit-status").val();
    let about = $("#user-edit-about").val();
@@ -126,11 +126,10 @@ const checkPlantEditForm = () => {
    let shape = $("#plant-edit-shape").val();
    let pattern = $("#plant-edit-pattern").val();
    let description = $("#plant-edit-description").val();
-   let img = $("#plant-edit-img").val();
 
    query({
       type:'update_plant',
-      params:[name,type,category,shape,pattern,description,img,sessionStorage.plantId]})
+      params:[name,type,category,shape,pattern,description,sessionStorage.plantId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
