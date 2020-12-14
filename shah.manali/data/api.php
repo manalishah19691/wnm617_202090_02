@@ -282,11 +282,12 @@ case "insert_user":
                `category` = ?,
                `shape` = ?,
                `pattern` = ?,
-               `description` = ?,
-               `img` = ?
+               `description` = ?
+               `img` = ''
             WHERE `id` = ?
             ",$p,false);
                   return ["result"=>"success"];
+
 
 
     // case "update_animal":
@@ -302,7 +303,16 @@ case "insert_user":
     //         ",$p,false);
     //      return ["result"=>"success"];
 
-
+        case "update_location":
+         $r = makeQuery($c,"UPDATE
+            `track_plants`
+            SET
+               `plant_health` = ?,
+               `map_description` = ?,
+               `date_create` = ?
+            WHERE `id` = ?
+            ",$p,false);
+                  return ["result"=>"success"];
 
 
 

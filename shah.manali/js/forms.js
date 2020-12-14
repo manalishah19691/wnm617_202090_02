@@ -77,11 +77,11 @@ const checkPlantAddForm = () => {
    let shape = $("#plant-add-shape").val();
    let pattern = $("#plant-add-pattern").val();
    let description = $("#plant-add-description").val();
-
+   let img = $("#plant-add-img").val();
 
    query({
       type:'insert_plant',
-      params:[name,type,category,shape,pattern,description,sessionStorage.userId]})
+      params:[name,type,category,shape,pattern,description,img,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

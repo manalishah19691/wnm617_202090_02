@@ -236,7 +236,7 @@ const LocationEditPage = async() => {
    }).then(d=>{
       console.log(d)
 
-      $("#location-edit-form")
+      $("#location-edit-page")
          .html(makeLocationtEditForm(d.result[0]));
    });
 }
