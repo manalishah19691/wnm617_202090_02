@@ -29,7 +29,8 @@ $(()=>{
          case 'plant-profile-page': PlantProfilePage(); break;
          case 'plant-edit-page': PlantEditPage(); break;
 
-
+         case 'location-profile-page': LocationProfilePage(); break;
+         case 'location-edit-page': LocationEditPage(); break;
          case 'location-add-page': LocationAddPage(); break;
       }
    })

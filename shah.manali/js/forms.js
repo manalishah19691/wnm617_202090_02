@@ -81,7 +81,7 @@ const checkPlantAddForm = () => {
 
    query({
       type:'insert_plant',
-      params:[sessionStorage.userId,name,type,category,shape,pattern,description]})
+      params:[name,type,category,shape,pattern,description,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

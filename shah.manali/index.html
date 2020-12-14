@@ -251,11 +251,11 @@
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
-         <div class="plant-top">
+         <a href="#location-profile-page" class="plant-top">
             <div class="map"></div>
             <div class="floater bottom-right">
                <a href="#location-add-page" class="btn-circle"><img src="img/add_icon.svg" alt class="icon"></a>
-            </div>
+            </a>
          </div>
          <div class="overscroll">
          <div class="plant-bottom"></div>
@@ -357,6 +357,56 @@
 
 
 
+
+
+
+
+
+
+    <section data-role="page" id="location-profile-page">
+      <header data-role="header">
+         <h1>About Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#addnew-page" class="nav-icon">
+               <li><a href="#plant-edit-page"><img src="img/edit_icon.svg" alt class="icon"></a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+   
+         <div class="overscroll">
+         <div class="location-profile"></div>
+
+         <div class="profile">
+            <!-- <img src="img/violet.jpeg" alt="plant1"> -->
+         </div>
+          
+              </div>
+         </div>
+      </div>
+      </div>
+   </section>
+
+
+
+   <section data-role="page" id="location-edit-page">
+      <header data-role="header">
+         <h1>Plant Info</h1>
+         <ul>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-plant-delete"><img src="img/delete_icon.svg" alt class="icon"></a></li>
+         </ul>
+      </header>
+      <div data-role="main" class="display-flex flex-column">
+         <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
+      </div>
+</div>
+      </div>
+   </section>
+
+  
 
 
 

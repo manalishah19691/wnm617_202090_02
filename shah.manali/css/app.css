@@ -345,20 +345,15 @@ a:hover {
    font-size:1.2em;
 }
 
-.plant-health,
+
 .plantlist-type img {
   display: inline-block;
   width: 1.25em;
   height: 1.25em;
 }
 
-.plant-health {
-  font-size: 0.75;
-}
 
-.map-description {
-  font-size: 0.5em;
-}
+
 
 
 
@@ -436,9 +431,53 @@ a:hover {
    width: 80vw;
 }
 
-.popup-description {
-  padding-left: 1em;
+.popup-name {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
+
+.popup-info {
+ 
+    position: absolute;
+    width: 184px;
+    height: 171px;
+    left: 140px;
+
+}
+
+.popup-type, .plant-health {
+ font-size: 1em;
+}
+
+.popup-type img{
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+.plant-health img{
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+
+.popup-description {
+  padding-top: 0.5em;
+  font-size: 0.75em;
+  line-height: 120%;
+}
+
+
+.popup-button{
+ position: relative;
+  height: 35px;
+  left: 10px;
+  align-content: center;
+    top: 140px;
+}
+
+
 
 .modal-body {
     background-color: var(--color-white);
@@ -448,6 +487,7 @@ a:hover {
     background-color: var(--color-neutral-lighter);
     padding: 0.5em 1em;
 }
+
 
 
 .modal.active .modal-back,
@@ -632,7 +672,7 @@ padding-bottom: 1em;
 .profile-description {
   font-size:1em;
    padding-left: 0.75em;
-
+   
 }
 
 #plant-profile-page .profile-image {
@@ -688,14 +728,6 @@ padding-bottom: 1em;
 }
 
 
-
-
-
-
-
-
-
-
 .map {
   position:absolute;
   top:0;
@@ -708,7 +740,7 @@ padding-bottom: 1em;
 .plant-top {
   flex:none;
   position: relative;
-  height: 40vh;
+  height: 25vh;
 }
 
 .plant-bottom {

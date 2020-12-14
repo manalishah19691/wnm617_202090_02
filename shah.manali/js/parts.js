@@ -56,23 +56,37 @@ const makePlantProfile = templater(o=>`
 
 
 
+const makeLocationProfile = templater(o=>`
+<div class="profile-image">
+   <img src="${o.img}" alt="">
+</div>
+<div class="location-body">
+   <div class="location-plant-health">Condition:<img src="img/${o.plant_health}.svg" alt=""></div>
+   <div class="location-description">Description: ${o.map_description}</div>
+
+</div>
+`);
+
+
 const makePlantPopup = o=>`
 <div class="display-flex" "modal-body">
 <div>
    <img src="${o.img}" alt="" style="width:100px;height:100px;border-radius:5px">
 </div>
-<div class="popup-description">
-   <div class="profile-name">${o.name}</div>
-   <div class="profile-type plantlist-type">Type:<img src="img/${o.type}.svg" alt=""></div>
-   <div class="plant-health">Plant health:<img src="img/${o.plant_health}.svg" alt=""></div>
-   <div class="map-description">${o.map_description}</div>
+<div class="popup-info">
+   <div class="popup-name">${o.name}</div>
+   <div class="popup-type">Type:<img src="img/${o.type}.svg" alt=""></div>
+   <div class="plant-health">Condition:<img src="img/${o.plant_health}.svg" alt=""></div>
+   <div class="popup-description">${o.map_description}</div>
 </div>
 <div>
 <div class="form-control">
-<a href="#" class="form-button js-plant-jump" data-id="${o.plant_id}">Profile</a>
+<a href="#" class="popup-button form-button js-plant-jump" data-id="${o.plant_id}">Profile</a>
 </div> 
 </div>
 `;
+
+
 
 
 

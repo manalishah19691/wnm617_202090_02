@@ -37,8 +37,8 @@ const makeMarkers = (map_el, map_locs) => {
          icon:{
             url:o.icon,
             scaledSize: {
-               width:40,
-               height:40
+               width:30,
+               height:30
             }
          }
       });

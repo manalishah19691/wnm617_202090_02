@@ -125,18 +125,6 @@ const UserUploadPage = async() => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const PlantProfilePage = async() => {
    query({
       type:'plant_by_id',
@@ -161,6 +149,47 @@ const PlantProfilePage = async() => {
 
 
 
+// const PlantProfilePage = async() => {
+//    query({
+//       type:'plant_by_id',
+//       params:[sessionStorage.plantId]
+//    }).then(d=>{
+//       console.log(d)
+
+//       $("#plant-profile-page .profile")
+//          .html(makePlantProfile(d.result));
+//    });
+
+//    query({
+//       type:'locations_by_plant_id',
+//       params:[sessionStorage.plantId]
+//    }).then(d=>{
+//       makeMap("#plant-profile-page .map").then(map_el=>{
+         
+
+//       makeMarkers(map_el,valid_plants);
+//     // makeMarkers(map_el,[]);
+
+//    map_el.data("markers").forEach((o,i)=>{
+//       o.addListener("click",function(){
+
+
+//          sessionStorage.plantId = valid_plants[i].plant_id;
+//          $.mobile.navigate("#location-profile-page");
+
+//       })
+//    })
+   
+// }
+
+
+
+
+
+
+
+
+
 
 const PlantEditPage = async() => {
    query({
@@ -178,10 +207,45 @@ const PlantEditPage = async() => {
 
 
 
+// const PlantProfilePage = async() => {
+//    query({
+//       type:'plant_by_id',
+//       params:[sessionStorage.plantId]
+//    }).then(d=>{
+//       console.log(d)
+
+//       $("#plant-profile-page .profile")
+//          .html(makePlantProfile(d.result));
+//    });
+
+//    query({
+//       type:'locations_by_plant_id',
+//       params:[sessionStorage.plantId]
+//    }).then(d=>{
+//       makeMap("#plant-profile-page .map").then(map_el=>{
+//          makeMarkers(map_el,d.result);
+//       })
+//    })
+   
+// }
 
 
 
 
+const LocationProfilePage = async() => {
+   query({
+      type:'plant_by_id',
+      params:[sessionStorage.plantId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#location-profile-page .profile")
+         .html(makeLocationProfile(d.result));
+   });
+
+  
+   
+}
 
 
 
