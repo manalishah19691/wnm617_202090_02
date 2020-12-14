@@ -178,7 +178,20 @@ const checkLocationAddForm = () => {
 
 
 
-
+const checkLocationEditForm = () => {
+   let plant_health = $("#location-edit-condition").val();
+   let map_description = $("location-edit-map_description").val();
+   let date_create = $("location-edit-date_create").val();
+   query({
+      type:'update_location',
+      params:[plant_health,map_description,date_create,sessionStorage.userId]})
+   .then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.go(-2);
+   })
+}
 
 
 

@@ -75,6 +75,10 @@ $(()=>{
       checkLocationAddForm();
    })
 
+   .on("click",".js-location-edit",function(e){
+      checkLocationEditForm();
+   })
+
 
 
 

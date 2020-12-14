@@ -57,14 +57,12 @@ const makePlantProfile = templater(o=>`
 
 
 const makeLocationProfile = templater(o=>`
-<div class="profile-image">
-   <img src="${o.img}" alt="">
+<div class="location-image">
+   <img src="${o.photo}" alt="">
 </div>
-<div class="location-body">
    <div class="location-plant-health">Condition:<img src="img/${o.plant_health}.svg" alt=""></div>
    <div class="location-description">Description: ${o.map_description}</div>
 
-</div>
 `);
 
 
@@ -159,54 +157,32 @@ ${FormControl({
 
 
 
-const makeUserEditForm = o => `
+const makeLocationEditForm = o => `
 <form id="user-edit-form" data-ajax="false" style="padding:1em">
 ${FormControl({
-   namespace:"user-edit",
-   name:"username",
-   displayname:"Username",
+   namespace:"location-edit",
+   name:"plant_health",
+   displayname:"Condition",
    type:"text",
-   placeholder:"Type Your Username",
-   value:o.username
+   placeholder:"Type plant condition",
+   value:o.plant_health
 })}
 ${FormControl({
-   namespace:"user-edit",
-   name:"firstname",
-   displayname:"First Name",
+   namespace:"location-edit",
+   name:"date_create",
+   displayname:"Date",
    type:"text",
-   placeholder:"Type Your First Name",
-   value:o.firstname
+   placeholder:"yyyy/mm/dd",
+   value:o.date_create
 })}
-${FormControl({
-   namespace:"user-edit",
-   name:"lastname",
-   displayname:"Last Name",
-   type:"text",
-   placeholder:"Type Your Last Name",
-   value:o.lastname
-})}
-${FormControl({
-   namespace:"user-edit",
-   name:"email",
-   displayname:"Email",
-   type:"text",
-   placeholder:"Type Your Email",
-   value:o.email
-})}
-${FormControl({
-   namespace:"user-edit",
-   name:"status",
-   displayname:"Status",
-   type:"text",
-   placeholder:"Type Your Status",
-   value:o.status
-})}
-
 <div class="form-control">
-   <label for="user-edit-about" class="form-label">About</label>
-   <textarea id="user-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
+   <label for="location-edit-map_description" class="form-label">Description</label>
+   <textarea id="location-edit-map_description" class="form-input" data-role="none" placeholder="About Location">${o.map_description}</textarea>
 </div>
 `;
+
+
+
 
 
 

@@ -125,88 +125,6 @@ const UserUploadPage = async() => {
 
 
 
-const PlantProfilePage = async() => {
-   query({
-      type:'plant_by_id',
-      params:[sessionStorage.plantId]
-   }).then(d=>{
-      console.log(d)
-
-      $("#plant-profile-page .profile")
-         .html(makePlantProfile(d.result));
-   });
-
-   query({
-      type:'locations_by_plant_id',
-      params:[sessionStorage.plantId]
-   }).then(d=>{
-      makeMap("#plant-profile-page .map").then(map_el=>{
-         makeMarkers(map_el,d.result);
-      })
-   })
-   
-}
-
-
-
-// const PlantProfilePage = async() => {
-//    query({
-//       type:'plant_by_id',
-//       params:[sessionStorage.plantId]
-//    }).then(d=>{
-//       console.log(d)
-
-//       $("#plant-profile-page .profile")
-//          .html(makePlantProfile(d.result));
-//    });
-
-//    query({
-//       type:'locations_by_plant_id',
-//       params:[sessionStorage.plantId]
-//    }).then(d=>{
-//       makeMap("#plant-profile-page .map").then(map_el=>{
-         
-
-//       makeMarkers(map_el,valid_plants);
-//     // makeMarkers(map_el,[]);
-
-//    map_el.data("markers").forEach((o,i)=>{
-//       o.addListener("click",function(){
-
-
-//          sessionStorage.plantId = valid_plants[i].plant_id;
-//          $.mobile.navigate("#location-profile-page");
-
-//       })
-//    })
-   
-// }
-
-
-
-
-
-
-
-
-
-
-const PlantEditPage = async() => {
-   query({
-      type:'plant_by_id',
-      params:[sessionStorage.plantId]
-   }).then(d=>{
-      console.log(d)
-
-      $("#plant-edit-form")
-         .html(makePlantEditForm(d.result[0]));
-   });
-}
-
-
-
-
-
 // const PlantProfilePage = async() => {
 //    query({
 //       type:'plant_by_id',
@@ -231,10 +149,72 @@ const PlantEditPage = async() => {
 
 
 
+const PlantProfilePage = async() => {
+   query({
+      type:'plant_by_id',
+      params:[sessionStorage.plantId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#plant-profile-page .profile")
+         .html(makePlantProfile(d.result));
+   });
+
+   query({
+      type:'locations_by_plant_id',
+      params:[sessionStorage.plantId]
+   }).then(d=> {
+      makeMap("#plant-profile-page .map").then(map_el => {
+
+         let valid_plants = d.result.reduce((r,o)=>{
+            o.icon = o.icon;
+            if(o.lat && o.lng) r.push(o);
+            return r;
+         },[])
+
+         makeMarkers(map_el, valid_plants);
+         // makeMarkers(map_el,[]);
+
+         map_el.data("markers").forEach((o, i) => {
+            o.addListener("click", function () {
+
+               sessionStorage.plantId = valid_plants[i].plant_id;
+               $.mobile.navigate("#location-profile-page");
+
+            })
+         })
+
+      })
+   })
+}
+
+
+
+
+const PlantEditPage = async() => {
+   query({
+      type:'plant_by_id',
+      params:[sessionStorage.plantId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#plant-edit-form")
+         .html(makePlantEditForm(d.result[0]));
+   });
+}
+
+
+
+
+
+
+
+
+
 
 const LocationProfilePage = async() => {
    query({
-      type:'plant_by_id',
+      type:'location_by_id',
       params:[sessionStorage.plantId]
    }).then(d=>{
       console.log(d)
@@ -246,6 +226,21 @@ const LocationProfilePage = async() => {
   
    
 }
+
+
+
+const LocationEditPage = async() => {
+   query({
+      type:'location_by_id',
+      params:[sessionStorage.plantId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#location-edit-form")
+         .html(makeLocationtEditForm(d.result[0]));
+   });
+}
+
 
 
 
