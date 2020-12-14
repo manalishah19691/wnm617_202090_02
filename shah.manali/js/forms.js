@@ -76,12 +76,11 @@ const checkPlantAddForm = () => {
    let category = $("#plant-add-category").val();
    let shape = $("#plant-add-shape").val();
    let pattern = $("#plant-add-pattern").val();
-   let description = $("#plant-add-description").val();
-   let img = $("#plant-add-img").val();
+   let description = $("#plant-add-description").val(); 
 
    query({
       type:'insert_plant',
-      params:[name,type,category,shape,pattern,description,img,sessionStorage.userId]})
+      params:[name,type,category,shape,pattern,description,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -127,10 +126,11 @@ const checkPlantEditForm = () => {
    let shape = $("#plant-edit-shape").val();
    let pattern = $("#plant-edit-pattern").val();
    let description = $("#plant-edit-description").val();
+   let img = $("#plant-edit-img").val();
 
    query({
       type:'update_plant',
-      params:[name,type,category,shape,pattern,description,sessionStorage.plantId]})
+      params:[name,type,category,shape,pattern,description,img,sessionStorage.plantId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

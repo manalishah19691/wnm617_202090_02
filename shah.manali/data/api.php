@@ -273,7 +273,7 @@ case "insert_user":
 
 
 
-      case "update_plant":
+      case "update_plant": 
          $r = makeQuery($c,"UPDATE
             `track_plants`
             SET
@@ -283,7 +283,7 @@ case "insert_user":
                `shape` = ?,
                `pattern` = ?,
                `description` = ?
-               `img` = ''
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
                   return ["result"=>"success"];
