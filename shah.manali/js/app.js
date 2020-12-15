@@ -103,16 +103,33 @@ $(()=>{
       $.mobile.navigate("#location-profile-page");
    })
 
-   .on("click",".js-plant-delete",function(e){
-      checkPlantDelete($(this).data("id"));
-   })
+   // .on("click",".js-plant-delete",function(e){
+   //    checkPlantDelete($(this).data("id"));
+   // })
 
    .on("click",".js-user-upload",function(e){
       checkUserUpload();
    })
+   
+   .on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         makeUploaderImage(this,d.result,'uploads/')
+      })
+   })
+
+  
+
+   .on("click",".js-plant-delete",function(e){
+      query({type:'delete_plant',params:[$(this).data("id")]})
+      $.mobile.navigate("#list-page");
+   })
 
 
-
+   .on("click",".js-location-delete",function(e){
+      checkLocationDelete($(this).data("id"));
+   })
 
 
 
@@ -123,17 +140,7 @@ $(()=>{
    .on("click",".filter",function(e){
       checkListFilter($(this).data());
    })
-   .on("change",".image-uploader input",function(e){
-      checkUpload(this.files[0])
-      .then(d=>{
-         console.log(d)
-         makeUploaderImage({
-            namespace:'user-upload',
-            folder:'uploads/',
-            name:d.result
-         })
-      })
-   })
+   
 
 
 

@@ -282,7 +282,8 @@ case "insert_user":
                `category` = ?,
                `shape` = ?,
                `pattern` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
                   return ["result"=>"$r"];

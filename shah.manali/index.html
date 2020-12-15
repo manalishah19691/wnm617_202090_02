@@ -337,7 +337,7 @@
          <ul>
             <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-plant-delete"><img src="img/delete_icon.svg" alt class="icon"></a></li>
+            <li><a href="#" class="js-plant-delete" data-id="${o.id}"><img src="img/delete_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
@@ -396,13 +396,11 @@
          <ul>
             <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-location-edit"><img src="img/save_icon.svg" alt class="icon"></a></li>
+            <li><a href="#" class="js-location-delete"><img src="img/delete_icon.svg" alt class="icon"></a></li>
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
-         <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
-      </div>
-</div>
+         <form id="location-edit-form" data-ajax="false" style="padding:1em"></form>
       </div>
    </section>
 
@@ -446,6 +444,14 @@
       <div data-role="main">
          <div class="overscroll">
             <form id="location-add-form" data-ajax="false" style="padding:1em">
+
+      <div>
+         <input type="hidden" id="location-add-image">
+         <label class="image-uploader thumbnail">
+            <input type="file" data-role="none" id="location-add-upload">
+         </label>
+      </div>
+
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
@@ -519,7 +525,6 @@
             <label class="image-uploader full">
                <input type="file" data-role="none" id="user-upload-input">
             </label>
-
          </form>
       </div>
    </section>
@@ -553,7 +558,6 @@
          <ul>
             <li><a href="#user-profile-page"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-edit"><img src="img/save_icon.svg" alt class="icon"></a></li>
          </ul>
 
       </header>

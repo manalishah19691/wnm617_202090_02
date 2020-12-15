@@ -824,3 +824,36 @@ padding: 1em;
 .image-uploader input {
    display:none;
 }
+
+
+.image-uploader.thumbnail {
+    width: 5em;
+    height: 5em;
+    border-radius: 0.5em;
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+.image-uploader.thumbnail:not(.picked){
+  border:2px solid var(--color-neutral-light);
+}
+/* This will add the floating plus symbol to the imagepicker */
+.image-uploader.thumbnail:before {
+  color:black;
+  content:'+';
+  position:absolute;
+  font-size:3em;
+  vertical-align:middle;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+/* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+.image-uploader.thumbnail.picked:before {
+  z-index:-1;
+}
+
+
+
+
+

@@ -126,10 +126,11 @@ const checkPlantEditForm = () => {
    let shape = $("#plant-edit-shape").val();
    let pattern = $("#plant-edit-pattern").val();
    let description = $("#plant-edit-description").val();
+   let image = $("#plant-edit-image").val();
 
    query({
       type:'update_plant',
-      params:[name,type,category,shape,pattern,description,sessionStorage.plantId]})
+      params:[name,type,category,shape,pattern,description,image,sessionStorage.plantId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -140,17 +141,19 @@ const checkPlantEditForm = () => {
 
 
 
-const checkPlantDelete = id => {
-   query({
-      type:'delete_plant',
-      params:[id]
-   }).then(d=>{
-      if(d.error) {
-         throw d.error;
-      }
-      window.history.back();
-   });
-}
+// const checkPlantDelete = id => {
+//    query({
+//       type:'delete_plant',
+//       params:[id]
+//    }).then(d=>{
+//       if(d.error) {
+//          throw d.error;
+//       }
+//       console.log(id);
+//       window.history.back();
+//       ListPage
+//    });
+// }
 
 
 
@@ -188,9 +191,33 @@ const checkLocationEditForm = () => {
       if(d.error) {
          throw d.error;
       }
-      window.history.go(-2);
+      window.history.go();
+      PlantProfilePage();
    })
 }
+
+
+
+const checkLocationDelete = id => {
+   query({
+      type:'delete_location',
+      params:[id]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      console.log(id);
+      window.history.back(-2);
+   });
+}
+
+
+
+
+
+
+
+
 
 
 

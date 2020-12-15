@@ -144,6 +144,8 @@ ${FormControl({
    <label for="user-edit-about" class="form-label">About</label>
    <textarea id="user-edit-about" class="form-input" data-role="none" placeholder="Tell us about yourself">${o.about}</textarea>
 </div>
+<a href="#user-profile-page" class="form-button js-user-edit">Save</a>
+</div>
 `;
 
 
@@ -205,7 +207,7 @@ ${FormControl({
 
 
 const makeLocationEditForm = o => `
-<form id="user-edit-form" data-ajax="false" style="padding:1em">
+<form id="location-edit-form" data-ajax="false" style="padding:1em">
 ${FormControl({
    namespace:"location-edit",
    name:"plant_health",
@@ -225,6 +227,9 @@ ${FormControl({
 <div class="form-control">
    <label for="location-edit-map_description" class="form-label">Description</label>
    <textarea id="location-edit-map_description" class="form-input" data-role="none" placeholder="About Location">${o.map_description}</textarea>
+   </div>
+   <div class="form-control">
+ <a href="#plant-profile-page" class="form-button js-location-edit">Save</a>
 </div>
 `;
 
@@ -256,5 +261,9 @@ const makeFilterList = (plants) => {
 
 
 
+const makeUploaderImage = (el,name,folder='') => {
+   $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
+      .prev().val(folder+name)
+}
 
 
