@@ -642,7 +642,7 @@ a:hover {
 .user-profile-image {
   width:50vw;
   height:50vw; 
-  padding-top: 2em;
+  
 }
 
 
@@ -652,12 +652,13 @@ a:hover {
 
 .user-info{
 padding-bottom: 1em;
+padding-top: 1em;
 }
 
 .profile-image img {
     border-radius: 10%;
-    width: calc(100vw - 8em);
-    height: calc(100vw - 8em);
+    width: calc(100vw - 4em);
+    height: calc(100vw - 2em);
     object-fit: cover;
     margin: 2em;
     display: flex;

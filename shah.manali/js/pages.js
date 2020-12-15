@@ -56,25 +56,30 @@ const ListPage = async() => {
       params:[sessionStorage.userId]
    });
 
-   // console.log(d)
+    $("#list-page .filter-list").html(makeFilterList(d.result))
 
+   console.log(d)
 
-   $("#list-page .plant-list")
-   .html(d.result.length?makePlantList(d.result):`<div class="instruction-page"><img src="img/instruction_page.svg" alt=""></div>`);
-     
-
-   // drawPlantList(d.result);
+   drawPlantList(d.result);
 }
 
 
 
 
 
+// const CreateProfilePage=async()=>{
+//    let d = query({
+//       type:'user_by_id',
+//       params:[sessionStorage.userId]
+//    }).then(d=>{
 
+//    console.log(d)
 
+//    $('#create-profile-page')
+//       .html(makeCreateProfile(d.result));
+//    })
 
-
-
+// }
 
 
 
@@ -219,7 +224,7 @@ const LocationProfilePage = async() => {
       console.log(d)
 
       $("#location-profile-page .profile")
-         .html(makeLocationProfile(d.result));
+         .html(makeLocationProfile(d.result[0]));
    });
 
   
@@ -235,7 +240,7 @@ const LocationEditPage = async() => {
    }).then(d=>{
       console.log(d)
 
-      $("#location-edit-page")
+      $("#location-edit-page .main")
          .html(makeLocationEditForm(d.result[0]));
    });
 }

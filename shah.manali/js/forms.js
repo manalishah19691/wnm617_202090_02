@@ -64,7 +64,27 @@ const checkUserEditForm = () => {
 }
 
 
+// const CreateProfileForm= ()=>{
+//    let firstname =$("#create-profile-firstname").val();
+//    let lastname =$("#create-profile-lastname").val();
+//    let status =$("#create-profile-status").val();
+//    let about =$("#create-profile-about").val();
 
+//    query({
+//       type:'create-profile',
+//       params:[firstname,lastname,status,about,sessionStorage.userId]})
+//    .then(d=>{
+//       if(d.error){
+//          throw d.error;
+//       }
+//       console.log("success");
+//          $("#create-profile-form")[0].reset();
+
+//       $.mobile.navigate("#list-page");
+//    })
+
+
+// }
 
 
 
@@ -77,11 +97,10 @@ const checkPlantAddForm = () => {
    let shape = $("#plant-add-shape").val();
    let pattern = $("#plant-add-pattern").val();
    let description = $("#plant-add-description").val();
-   let img = $("#plant-add-image").val(); 
 
    query({
       type:'insert_plant',
-      params:[name,type,category,shape,pattern,description,image,sessionStorage.userId]})
+      params:[name,type,category,shape,pattern,description,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;

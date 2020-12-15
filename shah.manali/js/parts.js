@@ -1,5 +1,5 @@
 
-const drawPlantList = (a,empty_phrase='Hey Dummy, add a plant.') => {
+const drawPlantList = (a,empty_phrase='<div class="instruction-page" style="align-items:center;"><img src= "img/instruction_page.svg" </div>') => {
    $("#list-page .plantlist")
       .html(a.length?makePlantList(a):empty_phrase);
 }
@@ -35,6 +35,40 @@ const makeUserProfile = templater(o=>`
    
 </div>
 `)
+
+// const makeCreateProfile = templater(o=>`
+
+// <form id="create-profile-page" data-ajax="false">
+      
+//       <div class="form-control display-flex flex-column">
+//          <label for="create-profile-firstname" class="form-label">Firstname</label>
+//          <input type="firstname" class="form-input" id="create-profile-firstname" data-role="none">
+//       </div>
+//       <div class="form-control display-flex flex-column">
+//          <label for="create-profile-lastname" class="form-label">Lastname</label>
+//          <input type="lastname" class="form-input" id="create-profile-lastname" data-role="none">
+//       </div>
+//       <div class="form-control display-flex flex-column">
+//          <label for="create-profile-status" class="form-label">Status</label>
+//          <input type="status" class="form-input" id="create-profile-status" data-role="none">
+//       </div>
+//       <div class="form-control">
+//          <label for="create-profile-about" class="form-label">About</label>
+//          <textarea data-role="none" name="create-profile-about"id="create-profile-about" class="add-cat-note margin-bot-5"></textarea>
+//       </div>
+      
+      
+//       <div class="form-control">
+//  <a href="#list-page" class="form-button create-profile-jump">Save</a>
+//       </div>
+//          <div class="form-control" style="text-align:center">
+//             <a href="#" class="notnow-button create-profile-jump"  data-role="none">Not now</a>
+//          </div>
+      
+      
+//    </form>
+
+// `)
 
 
 
@@ -74,8 +108,8 @@ const makePlantPopup = o=>`
 <div class="popup-info">
    <div class="popup-name">${o.name}</div>
    <div class="popup-type">Type:<img src="img/${o.type}.svg" alt=""></div>
-   <div class="plant-health">Condition:<img src="img/${o.plant_health}.svg" alt=""></div>
-   <div class="popup-description">${o.map_description}</div>
+   <div class="plant-health">Where:${o.plant_health}</div>
+   <div class="popup-description">${o.description}</div>
 </div>
 <div>
 <div class="form-control">
@@ -255,22 +289,15 @@ const makePlantEditForm = o => `
 
 const makeLocationEditForm = o => `
 <form id="location-edit-form" data-ajax="false" style="padding:1em">
-${FormControl({
-   namespace:"location-edit",
-   name:"plant_health",
-   displayname:"Condition",
-   type:"text",
-   placeholder:"Type plant condition",
-   value:o.plant_health
-})}
-${FormControl({
-   namespace:"location-edit",
-   name:"date_create",
-   displayname:"Date",
-   type:"text",
-   placeholder:"yyyy/mm/dd",
-   value:o.date_create
-})}
+<div class="form-control">
+   <label for="location-edit-plant_health" class="form-label">Condition:
+   <select class="drop-down" id=location-edit-plant_health data-role="none" value="">
+      <option class="options" value="Good">Good</option>
+      <option class="options" value="Excellent">Excellent</option>
+      <option class="options" value="Poor">Poor</option>
+   </select>
+</div>
+
 <div class="form-control">
    <label for="location-edit-map_description" class="form-label">Description</label>
    <textarea id="location-edit-map_description" class="form-input" data-role="none" placeholder="About Location">${o.map_description}</textarea>

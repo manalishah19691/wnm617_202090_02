@@ -24,6 +24,7 @@ $(()=>{
          case 'user-profile-page': UserProfilePage(); break;
          case 'user-edit-page': UserEditPage(); break;
          case 'user-upload-page': UserUploadPage(); break;
+         // case 'create-profile-page': CreateProfilePage(); break;
 
 
          case 'plant-profile-page': PlantProfilePage(); break;
@@ -57,6 +58,12 @@ $(()=>{
    })
 
 
+   // .on("click",".create-profile-jump", function(e){
+   //    e.preventDefault();
+   //    CreateProfileForm();
+   // })
+
+
   /* FORM SUBMIT BY BUTTON */
   
    .on("click",".js-plant-add",function(e){
@@ -79,7 +86,7 @@ $(()=>{
       checkLocationEditForm();
    })
 
-
+   
 
 
    

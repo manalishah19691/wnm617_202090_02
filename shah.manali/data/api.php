@@ -184,9 +184,9 @@ case "insert_user":
 
          $r = makeQuery($c,"INSERT INTO
             `track_users`
-            (`firstname`,`lastname`,`username`,`email`,`status`,`about`,`password`,`img`,`date_create`)
+            (`firstname`,`lastname`,`username`,`email`,`status`,`about`,`password`,`date_create`,`img`)
             VALUES
-            ('', '', ?, ?, '', '', md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ('', '', ?, ?, '', '', md5(?), NOW(), 'https://via.placeholder.com/400/?text=USER')
             ",$p,false);
 
          return ["id"=>$c->lastInsertId()];
@@ -209,9 +209,9 @@ case "insert_user":
       case "insert_plant":
          $r = makeQuery($c,"INSERT INTO
             `track_plants`
-            (`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create`,`user_id`)
+            (`name`,`type`,`category`,`shape`,`pattern`,`description`,`date_create`,`img`,`user_id`)
             VALUES
-            (?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=plant', NOW(), ?)
+            (?, ?, ?, ?, ?, ?, NOW(),'https://via.placeholder.com/400/?text=plant', ?)
             ",$p,false);
          if(isset($r['error'])) return $r;
          return ["id"=>$c->lastInsertId()];
@@ -225,7 +225,7 @@ case "insert_user":
             `track_locations`
             (`plant_id`,`lat`,`lng`,`plant_health`,`map_description`,`icon`,`date_create`,`photo`)
             VALUES
-            (?, ?, ?, ?, ?,'https://via.placeholder.com/100/?text=ICON', NOW(),'https://via.placeholder.com/400/?text=LOCATION')
+            (?, ?, ?, ?, ?,'img/map_icon.svg', NOW(),'https://via.placeholder.com/400/?text=LOCATION')
             ",$p,false);
          if(isset($r['error'])) return $r;
          return ["id"=>$c->lastInsertId()];
@@ -268,6 +268,25 @@ case "insert_user":
 
       
 
+//       case "create-profile":
+//       $r= makeQuery($c, "UPDATE `track_users` 
+//          SET 
+         
+//          `firstname`=?,
+//          `lastname`=?,
+//          `status`=?,
+//          `about`=?
+//          WHERE `id` =?
+//          ",$p,false);
+//       return ["result"=>"success"];
+
+
+//       default:
+//          return ["error"=>"No Matched Type"];
+         
+//    }
+// }
+
 
 
 
@@ -290,26 +309,13 @@ case "insert_user":
 
 
 
-    // case "update_animal":
-    //      $r = makeQuery($c,"UPDATE
-    //         `track_animals`
-    //         SET
-    //            `name` = ?,
-    //            `type` = ?,
-    //            `breed` = ?,
-    //            `description` = ?,
-    //            `img` = ?
-    //         WHERE `id` = ?
-    //         ",$p,false);
-    //      return ["result"=>"success"];
-
         case "update_location":
          $r = makeQuery($c,"UPDATE
             `track_plants`
             SET
                `plant_health` = ?,
-               `map_description` = ?,
-               `date_create` = ?
+               `date_create` = ?,
+               `map_description` = ?
             WHERE `id` = ?
             ",$p,false);
                   return ["result"=>"success"];
@@ -333,6 +339,7 @@ case "insert_user":
 
 
 
+     
 
 
 
