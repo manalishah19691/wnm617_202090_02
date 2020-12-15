@@ -59,7 +59,7 @@ const checkUserEditForm = () => {
       if(d.error) {
          throw d.error;
       }
-      window.history.go(-1);
+      window.history.go(-2);
    })
 }
 

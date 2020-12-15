@@ -209,7 +209,7 @@ case "insert_user":
       case "insert_plant":
          $r = makeQuery($c,"INSERT INTO
             `track_plants`
-            (`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create``user_id`)
+            (`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create`,`user_id`)
             VALUES
             (?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=plant', NOW(), ?)
             ",$p,false);
@@ -286,7 +286,7 @@ case "insert_user":
                `img` = ?
             WHERE `id` = ?
             ",$p,false);
-                  return ["result"=>"$r"];
+                  return ["result"=>"success"];
 
 
 
