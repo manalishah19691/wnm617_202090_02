@@ -1,64 +1,135 @@
-CREATE TABLE IF NOT EXISTS `track_plants` (
-`id` INT NULL,
-`user_id` INT NULL,
-`name` VARCHAR(MAX) NULL,
-`type` VARCHAR(MAX) NULL,
-`category` VARCHAR(MAX) NULL,
-`shape` VARCHAR(MAX) NULL,
-`pattern` VARCHAR(MAX) NULL,
-`description` VARCHAR(MAX) NULL,
-`img` VARCHAR(MAX) NULL,
-`date_create` VARCHAR(MAX) NULL
-);
+-- phpMyAdmin SQL Dump
+-- version 4.9.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Dec 15, 2020 at 02:51 PM
+-- Server version: 5.6.49-cll-lve
+-- PHP Version: 7.3.6
 
-INSERT INTO track_plants VALUES
-(1,7,'Architax','Flower','Zebra','Ball','Pointy-tips','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/965/fff/?text=Architax','2020-02-05 02:22:22'),
-(2,2,'Shadease','Flower','Sunburst','Ball','Thorns','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/926/fff/?text=Shadease','2020-06-21 02:17:44'),
-(3,4,'Schoolio','Cactus','Zebra','Tongue','Thorns','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/752/fff/?text=Schoolio','2020-02-14 06:59:19'),
-(4,9,'Rooforia','Leaf','Sunburst','Ball','Pointy-tips','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/961/fff/?text=Rooforia','2020-09-14 03:21:36'),
-(5,6,'Anacho','Cactus','Jade','Ear','Fine-haired','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/975/fff/?text=Anacho','2020-11-04 08:31:25'),
-(6,7,'Intradisk','Flower','Zebra','Ear','Pointy-tips','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/863/fff/?text=Intradisk','2020-02-18 09:57:43'),
-(7,4,'Zensor','Cactus','Zebra','Ball','Fine-haired','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/788/fff/?text=Zensor','2020-07-16 06:24:51'),
-(8,2,'Centregy','Flower','Zebra','Rose','Pointy-tips','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/930/fff/?text=Centregy','2020-07-31 02:53:26'),
-(9,2,'Songbird','Flower','Zebra','Rose','Striped','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/918/fff/?text=Songbird','2020-06-16 08:09:11'),
-(10,4,'Ontality','Cactus','Hens & Chicks','Ear','Fine-haired','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/758/fff/?text=Ontality','2020-08-01 11:53:31'),
-(11,7,'Gluid','Leaf','Hens & Chicks','Tongue','Fine-haired','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/963/fff/?text=Gluid','2020-05-16 05:34:52'),
-(12,5,'Comvey','Flower','Sunburst','Ball','Pointy-tips','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/950/fff/?text=Comvey','2020-02-14 09:24:13'),
-(13,2,'Zillacon','Leaf','Zebra','Rose','Striped','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/777/fff/?text=Zillacon','2020-10-21 12:14:43'),
-(14,2,'Moltonic','Flower','Hens & Chicks','Ball','Pointy-tips','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/955/fff/?text=Moltonic','2020-07-06 02:28:05'),
-(15,10,'Talkola','Leaf','Sunburst','Ball','Pointy-tips','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/869/fff/?text=Talkola','2020-09-02 05:08:34'),
-(16,2,'Pharmex','Cactus','Jade','Ball','Thorns','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/854/fff/?text=Pharmex','2020-06-10 10:34:55'),
-(17,2,'Bedder','Flower','Zebra','Rose','Striped','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/962/fff/?text=Bedder','2020-11-27 03:12:41'),
-(18,1,'Accupharm','Leaf','Jade','Tongue','Striped','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/791/fff/?text=Accupharm','2020-10-17 06:05:14'),
-(19,5,'Plutorque','Flower','Hens & Chicks','Ear','Thorns','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/833/fff/?text=Plutorque','2020-07-16 08:20:40'),
-(20,8,'Uneeq','Cactus','Jade','Rose','Fine-haired','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/754/fff/?text=Uneeq','2020-07-02 07:29:54'),
-(21,5,'Kongene','Leaf','Hens & Chicks','Ear','Fine-haired','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/719/fff/?text=Kongene','2020-11-15 09:03:58'),
-(22,1,'Cubicide','Flower','Sunburst','Ear','Fine-haired','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/851/fff/?text=Cubicide','2020-05-22 06:01:52'),
-(23,2,'Koffee','Leaf','Jade','Ball','Pointy-tips','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/885/fff/?text=Koffee','2020-10-19 11:35:40'),
-(24,6,'Irack','Leaf','Hens & Chicks','Ear','Thorns','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/863/fff/?text=Irack','2020-11-12 01:01:38'),
-(25,1,'Dancerity','Cactus','Zebra','Ear','Fine-haired','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/763/fff/?text=Dancerity','2020-02-21 11:45:24'),
-(26,9,'Prosely','Cactus','Zebra','Ball','Thorns','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/739/fff/?text=Prosely','2020-02-19 04:17:19'),
-(27,4,'Isonus','Flower','Zebra','Ball','Striped','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/750/fff/?text=Isonus','2020-11-10 10:59:48'),
-(28,10,'Kraggle','Leaf','Jade','Rose','Thorns','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/828/fff/?text=Kraggle','2020-01-24 10:27:19'),
-(29,1,'Geekol','Leaf','Zebra','Ball','Striped','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/866/fff/?text=Geekol','2020-03-19 07:47:06'),
-(30,9,'Zomboid','Leaf','Sunburst','Ball','Striped','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/759/fff/?text=Zomboid','2020-09-23 02:29:29'),
-(31,7,'Zensure','Cactus','Hens & Chicks','Ball','Fine-haired','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/796/fff/?text=Zensure','2020-08-13 12:10:19'),
-(32,1,'Magmina','Flower','Sunburst','Ball','Striped','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/778/fff/?text=Magmina','2020-08-21 10:11:09'),
-(33,9,'Viocular','Flower','Jade','Rose','Thorns','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/919/fff/?text=Viocular','2020-08-16 01:32:55'),
-(34,1,'Collaire','Leaf','Sunburst','Tongue','Striped','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/722/fff/?text=Collaire','2020-11-13 04:58:17'),
-(35,4,'Assurity','Cactus','Hens & Chicks','Tongue','Fine-haired','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/995/fff/?text=Assurity','2020-10-08 11:06:01'),
-(36,9,'Hinway','Flower','Zebra','Ball','Thorns','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/840/fff/?text=Hinway','2020-12-02 11:07:50'),
-(37,2,'Interodeo','Leaf','Jade','Ball','Fine-haired','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/895/fff/?text=Interodeo','2020-08-17 06:57:14'),
-(38,10,'Overfork','Leaf','Sunburst','Ball','Thorns','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/705/fff/?text=Overfork','2020-04-23 04:09:45'),
-(39,6,'Eclipsent','Leaf','Sunburst','Tongue','Thorns','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/749/fff/?text=Eclipsent','2020-05-30 01:28:37'),
-(40,3,'Avenetro','Cactus','Zebra','Ball','Fine-haired','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/812/fff/?text=Avenetro','2020-04-27 08:24:03'),
-(41,1,'Joviold','Flower','Sunburst','Ball','Fine-haired','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/701/fff/?text=Joviold','2020-11-22 09:21:31'),
-(42,6,'Motovate','Leaf','Jade','Ear','Fine-haired','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/805/fff/?text=Motovate','2020-02-11 07:55:29'),
-(43,1,'Isologix','Flower','Hens & Chicks','Rose','Striped','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/919/fff/?text=Isologix','2020-05-24 06:29:21'),
-(44,7,'Ebidco','Cactus','Sunburst','Tongue','Fine-haired','They are most commonly placed in flower beds or borders and like to grow together in clusters.','https://via.placeholder.com/400/992/fff/?text=Ebidco','2020-12-07 07:59:57'),
-(45,5,'Arctiq','Flower','Zebra','Ear','Thorns','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/990/fff/?text=Arctiq','2020-10-04 01:28:23'),
-(46,1,'Veraq','Leaf','Sunburst','Rose','Thorns','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/756/fff/?text=Veraq','2020-08-26 02:12:17'),
-(47,5,'Dadabase','Leaf','Jade','Ball','Thorns','Most leaves have rounded edges that with good care can live up to 100 years!','https://via.placeholder.com/400/982/fff/?text=Dadabase','2020-02-03 04:41:00'),
-(48,7,'Cosmetex','Leaf','Zebra','Ball','Striped','They are known for sprouting colorful flower clusters that look great in a summer garden.','https://via.placeholder.com/400/703/fff/?text=Cosmetex','2020-02-15 02:05:58'),
-(49,6,'Exosis','Leaf','Hens & Chicks','Ear','Fine-haired','The leaves of this plant start off as a light green shade that turns darker in the sun.','https://via.placeholder.com/400/816/fff/?text=Exosis','2020-09-28 08:07:49'),
-(50,7,'Sequitur','Cactus','Sunburst','Rose','Thorns','This succulent prefers full sun, which is why it grows best in outdoor gardens.','https://via.placeholder.com/400/856/fff/?text=Sequitur','2020-03-31 03:45:54');
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `aau608`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `track_plants`
+--
+
+CREATE TABLE `track_plants` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `type` varchar(64) NOT NULL,
+  `category` varchar(64) NOT NULL,
+  `shape` varchar(64) NOT NULL,
+  `pattern` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  `img` varchar(256) NOT NULL,
+  `date_create` datetime NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `track_plants`
+--
+
+INSERT INTO `track_plants` (`id`, `user_id`, `name`, `type`, `category`, `shape`, `pattern`, `description`, `img`, `date_create`) VALUES
+(1, 8, 'Xanide', 'Leaf', 'Sunburst', 'Ball', 'Thorns', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/836/fff/?text=Xanide', '2020-03-31 12:47:13'),
+(2, 2, 'kjhkjlll', 'Leaf', 'Jade', 'Ear', 'Pointy-tips', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'uploads/1607995406.9716_IMG_1022.JPG', '2020-05-26 01:38:57'),
+(3, 3, 'Eyewax', 'Flower', 'Jade', 'Ball', 'Thorns', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/874/fff/?text=Eyewax', '2020-10-31 02:36:15'),
+(4, 10, 'Furnitech', 'Flower', 'Zebra', 'Rose', 'Fine-haired', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/963/fff/?text=Furnitech', '2020-10-21 07:58:58'),
+(5, 4, 'Digigen', 'Leaf', 'Jade', 'Ear', 'Striped', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/995/fff/?text=Digigen', '2020-05-22 10:49:33'),
+(6, 10, 'Virva', 'Flower', 'Hens & Chicks', 'Ball', 'Striped', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/711/fff/?text=Virva', '2020-08-24 11:35:09'),
+(7, 10, 'Remotion', 'Flower', 'Jade', 'Tongue', 'Striped', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/754/fff/?text=Remotion', '2020-06-05 09:35:57'),
+(8, 5, 'Netility', 'Cactus', 'Zebra', 'Tongue', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/785/fff/?text=Netility', '2020-05-09 09:03:51'),
+(9, 9, 'Exosis', 'Leaf', 'Zebra', 'Ear', 'Thorns', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/977/fff/?text=Exosis', '2020-06-30 06:40:53'),
+(10, 5, 'Emoltra', 'Leaf', 'Jade', 'Rose', 'Striped', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/974/fff/?text=Emoltra', '2020-02-08 12:51:11'),
+(11, 7, 'Zillacon', 'Leaf', 'Jade', 'Rose', 'Fine-haired', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/928/fff/?text=Zillacon', '2020-03-19 05:41:05'),
+(12, 8, 'Neptide', 'Cactus', 'Sunburst', 'Rose', 'Pointy-tips', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/965/fff/?text=Neptide', '2020-10-24 07:29:33'),
+(13, 9, 'Limage', 'Cactus', 'Jade', 'Rose', 'Fine-haired', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/913/fff/?text=Limage', '2020-04-07 11:20:02'),
+(14, 7, 'Ewaves', 'Cactus', 'Zebra', 'Ear', 'Thorns', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/880/fff/?text=Ewaves', '2020-05-11 06:38:31'),
+(15, 6, 'Netplax', 'Leaf', 'Hens & Chicks', 'Tongue', 'Fine-haired', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/795/fff/?text=Netplax', '2020-10-07 08:59:17'),
+(16, 3, 'Steelfab', 'Flower', 'Sunburst', 'Ear', 'Fine-haired', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/872/fff/?text=Steelfab', '2020-10-06 07:11:07'),
+(17, 3, 'Conferia', 'Leaf', 'Zebra', 'Ear', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/793/fff/?text=Conferia', '2020-02-08 03:55:39'),
+(18, 9, 'Cedward', 'Leaf', 'Zebra', 'Rose', 'Striped', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/900/fff/?text=Cedward', '2020-07-28 05:03:39'),
+(19, 8, 'Frosnex', 'Leaf', 'Sunburst', 'Rose', 'Pointy-tips', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/914/fff/?text=Frosnex', '2020-03-11 12:08:55'),
+(20, 6, 'Capscreen', 'Flower', 'Zebra', 'Ear', 'Striped', 'The leaves of this plant start off as a light green shade that turns darker in the sun.', 'https://via.placeholder.com/400/895/fff/?text=Capscreen', '2020-01-29 07:13:43'),
+(21, 6, 'Ezent', 'Flower', 'Hens & Chicks', 'Ear', 'Fine-haired', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/761/fff/?text=Ezent', '2020-07-24 06:32:52'),
+(22, 10, 'Vinch', 'Leaf', 'Jade', 'Ball', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/851/fff/?text=Vinch', '2020-10-10 07:04:30'),
+(23, 1, 'sheekal', 'Leaf', 'Jade', 'Ear', 'Fine-haired', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'uploads/1607989041.9084_IMG_1022.JPG', '2020-09-28 08:10:10'),
+(24, 5, 'Oulu', 'Cactus', 'Jade', 'Rose', 'Fine-haired', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/975/fff/?text=Oulu', '2020-04-23 05:34:51'),
+(25, 4, 'Polarium', 'Cactus', 'Sunburst', 'Rose', 'Fine-haired', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/801/fff/?text=Polarium', '2020-06-11 11:50:11'),
+(26, 5, 'Apextri', 'Cactus', 'Sunburst', 'Tongue', 'Fine-haired', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/746/fff/?text=Apextri', '2020-01-16 11:50:44'),
+(27, 5, 'Genmy', 'Cactus', 'Jade', 'Tongue', 'Pointy-tips', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/790/fff/?text=Genmy', '2020-09-17 12:15:01'),
+(28, 5, 'Cablam', 'Flower', 'Jade', 'Ball', 'Pointy-tips', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/778/fff/?text=Cablam', '2020-12-03 02:17:09'),
+(29, 7, 'Exoblue', 'Flower', 'Sunburst', 'Ear', 'Striped', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/769/fff/?text=Exoblue', '2020-09-17 04:01:29'),
+(30, 10, 'Candecor', 'Leaf', 'Sunburst', 'Ear', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/823/fff/?text=Candecor', '2020-11-25 03:51:34'),
+(31, 1, 'Boilcat', 'Cactus', 'Zebra', 'Ball', 'Pointy-tips', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/707/fff/?text=Boilcat', '2020-06-17 12:55:55'),
+(32, 4, 'Tingles', 'Cactus', 'Jade', 'Rose', 'Fine-haired', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/724/fff/?text=Tingles', '2020-01-10 11:57:44'),
+(33, 8, 'Signity', 'Leaf', 'Hens & Chicks', 'Tongue', 'Pointy-tips', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/714/fff/?text=Signity', '2020-02-26 06:17:50'),
+(34, 3, 'Datagene', 'Cactus', 'Sunburst', 'Tongue', 'Pointy-tips', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/797/fff/?text=Datagene', '2020-06-19 07:25:37'),
+(35, 1, 'Dentrex', 'Leaf', 'Sunburst', 'Rose', 'Pointy-tips', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/877/fff/?text=Dentrex', '2020-11-07 07:38:29'),
+(36, 10, 'Idego', 'Flower', 'Zebra', 'Tongue', 'Striped', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/943/fff/?text=Idego', '2020-06-27 10:28:19'),
+(37, 5, 'Zillidium', 'Flower', 'Jade', 'Ball', 'Striped', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/982/fff/?text=Zillidium', '2020-01-21 11:08:43'),
+(38, 4, 'Senmei', 'Flower', 'Zebra', 'Rose', 'Pointy-tips', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/881/fff/?text=Senmei', '2020-04-25 09:51:42'),
+(39, 3, 'Rockabye', 'Leaf', 'Jade', 'Tongue', 'Striped', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/756/fff/?text=Rockabye', '2020-07-12 08:38:49'),
+(40, 8, 'Earthmark', 'Cactus', 'Sunburst', 'Tongue', 'Thorns', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/746/fff/?text=Earthmark', '2020-04-21 06:20:09'),
+(41, 2, 'Qualitex', 'Cactus', 'Jade', 'Ear', 'Thorns', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'uploads/1607995959.3779_IMG_1022.JPG', '2020-12-01 08:51:06'),
+(42, 6, 'Rotodyne', 'Leaf', 'Sunburst', 'Ball', 'Striped', 'They are known for sprouting colorful flower clusters that look great in a summer garden.', 'https://via.placeholder.com/400/841/fff/?text=Rotodyne', '2020-10-08 06:06:55'),
+(43, 4, 'Proflex', 'Cactus', 'Hens & Chicks', 'Tongue', 'Striped', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/874/fff/?text=Proflex', '2020-04-10 10:32:47'),
+(44, 8, 'Marvane', 'Cactus', 'Sunburst', 'Rose', 'Fine-haired', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/869/fff/?text=Marvane', '2020-10-30 06:17:42'),
+(45, 7, 'Emergent', 'Flower', 'Jade', 'Ear', 'Striped', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/810/fff/?text=Emergent', '2020-02-03 04:14:20'),
+(46, 5, 'Zolarity', 'Flower', 'Hens & Chicks', 'Tongue', 'Fine-haired', 'This succulent prefers full sun, which is why it grows best in outdoor gardens.', 'https://via.placeholder.com/400/769/fff/?text=Zolarity', '2020-03-12 06:44:55'),
+(47, 9, 'Emtrak', 'Cactus', 'Zebra', 'Rose', 'Thorns', 'Most leaves have rounded edges that with good care can live up to 100 years!', 'https://via.placeholder.com/400/840/fff/?text=Emtrak', '2020-03-13 05:27:30'),
+(48, 4, 'Earthwax', 'Cactus', 'Sunburst', 'Ear', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/968/fff/?text=Earthwax', '2020-03-26 02:54:21'),
+(49, 8, 'Digifad', 'Flower', 'Zebra', 'Rose', 'Thorns', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/832/fff/?text=Digifad', '2020-04-17 09:34:26'),
+(50, 7, 'Zytrex', 'Flower', 'Zebra', 'Ear', 'Fine-haired', 'They are most commonly placed in flower beds or borders and like to grow together in clusters.', 'https://via.placeholder.com/400/890/fff/?text=Zytrex', '2020-10-05 02:14:53'),
+(251, 1, 'planter', 'leaf', 'jade', 'ear', 'zebra', 'lkdjlfksldkfnklasdkn', 'https://via.placeholder.com/400/?text=plant', '2020-12-12 02:21:13'),
+(252, 11, 'sweety', 'Leaf', 'jade', 'ear', 'zebra', 'gfggjihioyuo', 'https://via.placeholder.com/400/?text=plant', '2020-12-12 14:20:11'),
+(258, 2, 'aloe', 'Leaf', 'Sunburst', 'Ball', 'Thorns', 'Thi hath pointy-tips & thorns', 'uploads/1608017274.5656_e0c3f51c-953b-4063-a6cb-3ae58651a59c.JPG', '2020-12-14 18:33:04'),
+(259, 2, 'Sheei', 'Flower', 'Jade', 'Tongue', 'Fine-haired', 'sdgfgfdhhfgjfjffgh', 'https://via.placeholder.com/400/?text=plant', '2020-12-14 21:33:14'),
+(260, 2, '', 'Leaf', 'Sunburst', 'Ball', 'Thorns', '', 'https://via.placeholder.com/400/?text=plant', '2020-12-14 21:33:23'),
+(261, 13, 'Aloe', 'Cactus', 'Sunburst', 'Tongue', 'Thorns', 'Great for health benefits', 'uploads/1608056945.7138_e0c3f51c-953b-4063-a6cb-3ae58651a59c.JPG', '2020-12-15 11:09:11'),
+(262, 13, 'Snow white', 'Flower', 'Zebra', 'Ear', 'Striped', 'White flower plant.', 'uploads/1608066782.467_bc09ddd8-eb17-48b1-acaf-6c2fcad009fa.JPG', '2020-12-15 11:09:24'),
+(267, 13, 'Sharpy', 'Cactus', 'Hens & Chicks', 'Ball', 'Pointy-tips', 'This plant is too sharp', 'uploads/1608057072.9766_d6d6d77b-df31-42dd-b433-59815e120031.JPG', '2020-12-15 11:30:28'),
+(269, 13, 'Sia', 'Leaf', 'Sunburst', 'Ear', 'Thorns', 'As beautiful as Sia', 'uploads/1608057239.4939_cf8866c3-319b-4b46-8024-b88d22de0723.JPG', '2020-12-15 11:33:42'),
+(266, 13, 'Pinky', 'Flower', 'Jade', 'Ear', 'Thorns', 'pink flower plant', 'uploads/1608056761.6131_df20572a-adfc-44e7-a6e8-744165b2e952.JPG', '2020-12-15 11:23:17'),
+(270, 13, 'Lush', 'Flower', 'Hens & Chicks', 'Rose', 'Pointy-tips', 'Happy healthy succulent', 'uploads/1608057391.4385_153bc6d9-6f07-4861-9c7c-75938619c7a1.JPG', '2020-12-15 11:36:16'),
+(271, 23, 'good plant', 'Cactus', 'Hens & Chicks', 'Ear', 'Pointy-tips', '', 'https://via.placeholder.com/400/?text=plant', '2020-12-15 14:45:22');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `track_plants`
+--
+ALTER TABLE `track_plants`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `track_plants`
+--
+ALTER TABLE `track_plants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
