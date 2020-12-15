@@ -122,7 +122,7 @@ $(()=>{
   
 
    .on("click",".js-plant-delete",function(e){
-      query({type:'delete_plant',params:[$(this).data("id")]})
+      query({type:'delete_plant',params:[sessionStorage.plantId]})
       $.mobile.navigate("#list-page");
    })
 

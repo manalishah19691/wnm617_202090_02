@@ -144,7 +144,7 @@ const checkPlantEditForm = () => {
 // const checkPlantDelete = id => {
 //    query({
 //       type:'delete_plant',
-//       params:[id]
+//       params:[sessionStorage.plantId]
 //    }).then(d=>{
 //       if(d.error) {
 //          throw d.error;

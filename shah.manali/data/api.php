@@ -209,9 +209,9 @@ case "insert_user":
       case "insert_plant":
          $r = makeQuery($c,"INSERT INTO
             `track_plants`
-            (`user_id`,`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create`)
+            (`name`,`type`,`category`,`shape`,`pattern`,`description`,`img`,`date_create``user_id`)
             VALUES
-            (?, ?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=plant', NOW())
+            (?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=plant', NOW(), ?)
             ",$p,false);
          if(isset($r['error'])) return $r;
          return ["id"=>$c->lastInsertId()];
