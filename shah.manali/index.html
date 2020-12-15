@@ -62,7 +62,7 @@
             <div class="form-control signin-alt">
                <a href="#signup-page" class="ui-link">Create Account</a>
                <br>
-               <a href="#password-page" class="ui-link">Forgot Password?</a> 
+               <!-- <a href="#forgot-password-page" class="ui-link">Forgot Password?</a>  -->
             </div>
          </form>
       </div>
@@ -286,32 +286,64 @@
      
      <div data-role="main">
       <div class="overscroll" style="padding: 1em;">
-          <div class="flex-stretch display-flex flex-align-center flex-justify-center">
+          
+       <!--    <div class="flex-stretch display-flex flex-align-center flex-justify-center">
             <img src="img/addprofile.png" alt="profile" viewBox="0 0 100 100" style="width:50vw;height:50vw; padding-top: 2em">
+         </div> -->
+
+         <div>
+            <input type="hidden" id="plant-add-image">
+            <label class="image-uploader thumbnail">
+               <input type="file" data-role="none" id="plant-add-upload" style="display:none">
+            </label>
          </div>
 
          <form id="plant-add-form" data-ajax="false">
          <input type="hidden" id="plant-add-destination" value="#list-page">
-         <div class="form-control">
+               <div class="form-control">
                   <label for="plant-add-name" class="form-label">Name</label>
                   <input id="plant-add-name" type="text" class="form-input" data-role="none" placeholder="Type plant name">
                </div>
+               
                <div class="form-control">
-                  <label for="plant-add-type" class="form-label">Type</label>
-                  <input id="plant-add-type" type="text" class="form-input" data-role="none" placeholder="Type plant type">
+                  <label for="plant-add-type" class="form-label">Type:
+                  <select class="drop-down" id=plant-add-type data-role="none" value="">
+                     <option class="options" value="Leaf">Leaf</option>
+                     <option class="options" value="Cactus">Cactus</option>
+                     <option class="options" value="Flower">Flower</option>
+                  </select>
                </div>
+
                <div class="form-control">
-                  <label for="plant-add-categoryr" class="form-label">Category</label>
-                  <input id="plant-add-category" type="text" class="form-input" data-role="none" placeholder="Type plant category">
+                  <label for="plant-add-category" class="form-label">Category:
+                  <select class="drop-down" id=plant-add-category data-role="none" value="">
+                     <option class="options" value="Sunburst">Sunburst</option>
+                     <option class="options" value="Jade">Jade</option>
+                     <option class="options" value="Zebra">Zebra</option>
+                     <option class="options" value="Hens & Chicks">Hens & Chicks</option>
+                  </select>
                </div>
+
                <div class="form-control">
-                  <label for="plant-add-shape" class="form-label">Shape</label>
-                  <input id="plant-add-shape" type="text" class="form-input" data-role="none" placeholder="Type plant shape">
+                  <label for="plant-add-shape" class="form-label">Shape:
+                  <select class="drop-down" id=plant-add-shape data-role="none" value="">
+                     <option class="options" value="Ball">Ball</option>
+                     <option class="options" value="Rose">Rose</option>
+                     <option class="options" value="Tongue">Tongue</option>
+                     <option class="options" value="Ear">Ear</option>
+                  </select>
                </div>
+
                <div class="form-control">
-                  <label for="plant-add-pattern" class="form-label">Pattern</label>
-                  <input id="plant-add-pattern" type="text" class="form-input" data-role="none" placeholder="Type plant pattern">
+                  <label for="plant-add-pattern" class="form-label">Pattern:
+                  <select class="drop-down" id=plant-add-pattern data-role="none" value="">
+                     <option class="options" value="Thorns">Thorns</option>
+                     <option class="options" value="Pointy-tips">Pointy-tips</option>
+                     <option class="options" value="Fine-haired">Fine-haired</option>
+                     <option class="options" value="Striped">Striped</option>
+                  </select>
                </div>
+
             <div class="form-control">
                <label for="plant-add-description" class="form-label">Description</label>
                <textarea id="plant-add-description" class="form-input" data-role="none" placeholder="Type plant description"></textarea>
@@ -341,9 +373,10 @@
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
+         <div class="overscroll">
          <form id="plant-edit-form" data-ajax="false" style="padding:1em"></form>
+      
       </div>
-</div>
       </div>
    </section>
 
@@ -436,9 +469,8 @@
       <header data-role="header">
          <h1>Describe Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><img src="img/back_icon.svg" alt class="icon"></a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" class="js-location-add">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -451,10 +483,26 @@
             <input type="file" data-role="none" id="location-add-upload">
          </label>
       </div>
+            
+            <!-- Code snipett credit- Fifi Law -->
+            <div class="form-control">
+                  <label for="location-add-plant_health" class="form-label plant-health">Condition:
+                  <select class="drop-down" id=location-add-plant_health data-role="none" value="">
+                     <option class="options" value="Poor">Poor</option>
+                     <option class="options" value="Good">Good</option>
+                     <option class="options" value="Excellent">Excellent</option>
+                  </select>
+               </div>
 
+              
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input" data-role="none" placeholder="Type location description"></textarea>
+
+                  <div class="form-control">
+               <a href="#list-page" class= "js-location-add form-button">Save</a>
+            </div>
+
                </div>
             </form>
          </div>

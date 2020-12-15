@@ -33,7 +33,7 @@ const checkSignupForm = async () => {
          console.log(d.id)
          sessionStorage.userId = d.id;
          $("#signup-form")[0].reset();
-         $.mobile.navigate("#recent-page");
+         $.mobile.navigate("#list-page");
       })
    }
 }
@@ -76,11 +76,12 @@ const checkPlantAddForm = () => {
    let category = $("#plant-add-category").val();
    let shape = $("#plant-add-shape").val();
    let pattern = $("#plant-add-pattern").val();
-   let description = $("#plant-add-description").val(); 
+   let description = $("#plant-add-description").val();
+   let img = $("#plant-add-image").val(); 
 
    query({
       type:'insert_plant',
-      params:[name,type,category,shape,pattern,description,sessionStorage.userId]})
+      params:[name,type,category,shape,pattern,description,image,sessionStorage.userId]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -93,28 +94,6 @@ const checkPlantAddForm = () => {
       $.mobile.navigate($("#plant-add-destination").val());
    })
 }
-
-
-
-
-// const checkAnimalEditForm = () => {
-//    let name = $("#animal-edit-name").val();
-//    let type = $("#animal-edit-type").val();
-//    let breed = $("#animal-edit-breed").val();
-//    let description = $("#animal-edit-description").val();
-//    let image = $("#animal-edit-image").val();
-
-//    query({
-//       type:'update_animal',
-//       params:[name,type,breed,description,image,sessionStorage.animalId]})
-//    .then(d=>{
-//       if(d.error) {
-//          throw d.error;
-//       }
-//       window.history.back();
-//    })
-// }
-
 
 
 
@@ -135,7 +114,7 @@ const checkPlantEditForm = () => {
       if(d.error) {
          throw d.error;
       }
-      window.history.back();
+     $.mobile.navigate("#plant-profile-page");
    })
 }
 
@@ -164,17 +143,20 @@ const checkPlantEditForm = () => {
 const checkLocationAddForm = () => {
    let lat = $("#location-add-lat").val();
    let lng = $("#location-add-lng").val();
+   let plant_health = $("#location-add-plant_health").val();
    let description = $("#location-add-description").val();
+   let photo = $("#location-add-image").val();
+
 
    query({
       type:'insert_location',
-      params:[sessionStorage.plantId,lat,lng,description]})
+      params:[sessionStorage.plantId,lat,lng,description,photo]})
    .then(d=>{
       if(d.error) {
          throw d.error;
       }
       $("#location-add-form")[0].reset();
-      window.history.go(-2);
+      $.mobile.navigate("#list-page");
    })
 }
 

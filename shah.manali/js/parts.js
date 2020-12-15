@@ -149,53 +149,100 @@ ${FormControl({
 `;
 
 
+
+// ${FormControl({
+//    namespace:"plant-edit",
+//    name:"name",
+//    displayname:"Name",
+//    type:"text",
+//    placeholder:"Type Plant Name",
+//    value:o.name
+// })}
+// ${FormControl({
+//    namespace:"plant-edit",
+//    name:"type",
+//    displayname:"Type",
+//    type:"text",
+//    placeholder:"Choose Plant Type",
+//    value:o.type
+// })}
+// ${FormControl({
+//    namespace:"plant-edit",
+//    name:"category",
+//    displayname:"Category",
+//    type:"text",
+//    placeholder:"Type plant category",
+//    value:o.category
+// })}
+// ${FormControl({
+//    namespace:"plant-edit",
+//    name:"shape",
+//    displayname:"Shape",
+//    type:"text",
+//    placeholder:"Type plant shape",
+//    value:o.shape
+// })}
+// ${FormControl({
+//    namespace:"plant-edit",
+//    name:"pattern",
+//    displayname:"Pattern",
+//    type:"text",
+//    placeholder:"Type pattern of plant",
+//    value:o.pattern
+// })}
+
 const makePlantEditForm = o => `
 <div>
    <input type="hidden" id="plant-edit-image" value="${o.img}">
    <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
-      <input type="file" data-role="none" id="plant-edit-upload">
+      <input type="file" data-role="none" id="plant-edit-upload" style="display:none">
    </label>
 </div>
-${FormControl({
-   namespace:"plant-edit",
-   name:"name",
-   displayname:"Name",
-   type:"text",
-   placeholder:"Type Plant Name",
-   value:o.name
-})}
-${FormControl({
-   namespace:"plant-edit",
-   name:"type",
-   displayname:"Type",
-   type:"text",
-   placeholder:"Choose Plant Type",
-   value:o.type
-})}
-${FormControl({
-   namespace:"plant-edit",
-   name:"category",
-   displayname:"Category",
-   type:"text",
-   placeholder:"Type plant category",
-   value:o.category
-})}
-${FormControl({
-   namespace:"plant-edit",
-   name:"shape",
-   displayname:"Shape",
-   type:"text",
-   placeholder:"Type plant shape",
-   value:o.shape
-})}
-${FormControl({
-   namespace:"plant-edit",
-   name:"pattern",
-   displayname:"Pattern",
-   type:"text",
-   placeholder:"Type pattern of plant",
-   value:o.pattern
-})}
+               <div class="form-control">
+               <label for="plant-edit-name" class="form-label">Name</label>
+                  <input id="plant-edit-name" type="text" class="form-input" data-role="none" placeholder="Type plant name">
+               </div>
+               
+               <div class="form-control">
+                  <label for="plant-edit-type" class="form-label">Type:
+                  <select class="drop-down" id=plant-edit-type data-role="none" value="">
+                     <option class="options" value="Leaf">Leaf</option>
+                     <option class="options" value="Cactus">Cactus</option>
+                     <option class="options" value="Flower">Flower</option>
+                  </select>
+               </div>
+
+               <div class="form-control">
+                  <label for="plant-edit-category" class="form-label">Category:
+                  <select class="drop-down" id=plant-edit-category data-role="none" value="">
+                     <option class="options" value="Sunburst">Sunburst</option>
+                     <option class="options" value="Jade">Jade</option>
+                     <option class="options" value="Zebra">Zebra</option>
+                     <option class="options" value="Hens & Chicks">Hens & Chicks</option>
+                  </select>
+               </div>
+
+               <div class="form-control">
+                  <label for="plant-edit-shape" class="form-label">Shape:
+                  <select class="drop-down" id=plant-edit-shape data-role="none" value="">
+                     <option class="options" value="Ball">Ball</option>
+                     <option class="options" value="Rose">Rose</option>
+                     <option class="options" value="Tongue">Tongue</option>
+                     <option class="options" value="Ear">Ear</option>
+                  </select>
+               </div>
+
+               <div class="form-control">
+                  <label for="plant-edit-pattern" class="form-label">Pattern:
+                  <select class="drop-down" id=plant-edit-pattern data-role="none" value="">
+                     <option class="options" value="Thorns">Thorns</option>
+                     <option class="options" value="Pointy-tips">Pointy-tips</option>
+                     <option class="options" value="Fine-haired">Fine-haired</option>
+                     <option class="options" value="Striped">Striped</option>
+                  </select>
+               </div>
+
+
 <div class="form-control">
    <label for="plant-edit-description" class="form-label">Description</label>
    <textarea id="plant-edit-description" class="form-input" data-role="none" placeholder="Type plant description">${o.description}</textarea>
@@ -232,6 +279,57 @@ ${FormControl({
  <a href="#plant-profile-page" class="form-button js-location-edit">Save</a>
 </div>
 `;
+
+
+
+
+// code snipett credit Fifi Law
+const SelectOptions = (a,selected) => {
+
+
+   return a.reduce((r,o,i)=>{
+
+      return r+`<option class="options" value="${o[0]}" ${(selected==o[0])?"selected":""}>${o[1]} </option>`
+
+   },"");
+
+const type = [
+   ['Leaf','Leaf'],
+   ['Flower','Flower'],
+   ['Cactus','Cactus']
+];
+
+const plant_health = [
+   ['Poor','Poor'],
+   ['Good','Good'],
+   ['Excellent','Excellent']
+];
+
+
+const category = [
+   ['Sunburst','Sunburst'],
+   ['Jade','Jade'],
+   ['Zebra','Zebra'],
+   ['Hens & Chicks','Hens & Chicks']
+];
+
+const shape = [
+   ['Ball','Ball'],
+   ['Ear','Ear'],
+   ['Rose','Rose'],
+   ['Tongue','Tongue']
+];
+
+
+const pattern = [
+   ['Thorns','Thorns'],
+   ['Pointy-tips','Pointy-tips'],
+   ['Fine-haired','Fine-haired'],
+   ['Striped','Striped']
+];
+
+};
+
 
 
 

@@ -56,11 +56,14 @@ const ListPage = async() => {
       params:[sessionStorage.userId]
    });
 
-   $("#list-page .filter-list").html(makeFilterList(d.result))
+   // console.log(d)
 
-   console.log(d)
 
-   drawPlantList(d.result);
+   $("#list-page .plant-list")
+   .html(d.result.length?makePlantList(d.result):`<div class="instruction-page"><img src="img/instruction_page.svg" alt=""></div>`);
+     
+
+   // drawPlantList(d.result);
 }
 
 
@@ -252,7 +255,8 @@ const LocationAddPage = async() => {
 
       let posFromClick = {
          lat:e.latLng.lat(),
-         lng:e.latLng.lng()
+         lng:e.latLng.lng(),
+         icon:"img/map_icon.svg"
       };
       let posFromCenter = {
          lat:map.getCenter().lat(),

@@ -9,10 +9,12 @@
    --font-serif: eldwin-script,sans-serif;
    --font-sans: Futura, sans-serif;
 
-/* --color-neutral-lighter: #7394A0; (blue)
- --color-neutral-lighter: #B5CFCF; (baby blue)
- --color-neutral-lighter: #DBA49B; (peach)
-*/
+
+
+
+  /* --color-main-light: #e4fcd1;
+   --color-main-medium: #6dd21d;
+   --color-main-dark: #234905;*/
 
 
 
@@ -22,9 +24,10 @@
    --color-neutral-medium: #788578;
    --color-neutral-dark: #62824D;
 
-   --color-main-light: #e4fcd1;
-   --color-main-medium: #6dd21d;
-   --color-main-dark: #234905;
+   --color-main-light: #7394A0; (blue)
+ --color-main-medium: #B5CFCF; (baby blue)
+ --color-main-dark: #DBA49B; (peach)
+
 
    --color-black:#000;
    --color-white:#fff;
@@ -352,7 +355,19 @@ a:hover {
   height: 1.25em;
 }
 
+.plantlist.instruction-page {
 
+    width: 60vw;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.instruction-page img{
+  max-width: 100%;
+}
 
 
 
@@ -585,7 +600,7 @@ a:hover {
 
 
 /*FLOATER*/
-.floater { position:absolute; }
+.floater { position:absolute; padding: 1em; }
 .floater.right { right:1em; }
 .floater.left { left:1em; }
 .floater.top { top:1em; }
@@ -601,7 +616,8 @@ a:hover {
     text-align: center;
     border-radius: 2rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    font-size: 1.5em;
+    font-size: 1em;
+
 }
 
 
@@ -651,29 +667,27 @@ padding-bottom: 1em;
 }
 .profile-body {
    padding:1em;
+   text-align: center;
 }
 
 .profile-name {
    font-size:1.5em;
-   margin-bottom: 1em;
-   padding-left: 0.2em;
+
+   ;
 }
 
+
+.profile-category,
+.profile-pattern,
+.profile-description, 
+.profile-shape, 
 .profile-type {
   font-size:1em;
-   padding-left: 0.75em;
+   padding-bottom: 0.50em;
 }
 
-.profile-color {
-  font-size:1em;
-   padding-left: 0.75em;
-}
 
-.profile-description {
-  font-size:1em;
-   padding-left: 0.75em;
-   
-}
+
 
 #plant-profile-page .profile-image {
    display:flex;
@@ -819,7 +833,10 @@ padding: 1em;
    background-repeat:no-repeat;
 }
 .ui-mobile label.image-uploader {
-   margin:0;
+   margin: 0;
+   width: calc(100vw - 2em);
+   height: calc(100vw - 4em);
+}
 }
 .image-uploader input {
    display:none;
@@ -852,6 +869,34 @@ padding: 1em;
 .image-uploader.thumbnail.picked:before {
   z-index:-1;
 }
+
+
+#location-add-upload{
+  display:none;
+}
+
+
+.drop-down{
+  border: solid 2px #B5CFCF;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  line-height: 0.75;
+  display: inline-flex;
+}
+
+
+.ui-select{
+    border: 1px solid var(--color-main-medium);
+    border-radius: 5px;
+    background-color: var(--color-neutral-light);
+
+    width: 100%;
+    text-align: left;
+}
+
+
+
+
 
 
 
